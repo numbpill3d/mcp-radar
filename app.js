@@ -123,7 +123,18 @@ function renderServers(servers) {
   }
 }
 
+function setSeoUrls() {
+  const url = window.location.href;
+  const canonical = document.querySelector('link[rel="canonical"]');
+  if (canonical) canonical.setAttribute('href', url);
+
+  const ogUrl = document.querySelector('meta[property="og:url"]');
+  if (ogUrl) ogUrl.setAttribute('content', url);
+}
+
 async function main() {
+  setSeoUrls();
+
   const serversPayload = await getJson('./data/servers.json');
   const sponsors = await getJson('./data/sponsors.json').catch(() => []);
 

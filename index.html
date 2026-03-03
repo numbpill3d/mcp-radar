@@ -3,7 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>mcp radar</title>
+  <title>mcp radar | mcp server directory</title>
+  <meta name="description" content="an auto-updating, lightweight directory of model context protocol (mcp) servers." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="mcp radar" />
+  <meta property="og:description" content="an auto-updating directory of mcp servers." />
+  <meta property="og:url" content="" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="mcp radar" />
+  <meta name="twitter:description" content="an auto-updating directory of mcp servers." />
+
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
@@ -60,7 +73,11 @@
 
     <section class="panel">
       <h2>servers</h2>
-      <div id="results" class="list"></div>
+      <div id="results" class="list">
+        <!-- prerender:start -->
+        <div class="fine">loading…</div>
+        <!-- prerender:end -->
+      </div>
     </section>
   </main>
 

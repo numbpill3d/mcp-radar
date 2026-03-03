@@ -34,5 +34,5 @@ jobs:
       - name: commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: update servers.json"
-          file_pattern: "data/servers.json"
+          commit_message: "chore: update data + seo artifacts"
+          file_pattern: "data/servers.json index.html robots.txt sitemap.xml"
