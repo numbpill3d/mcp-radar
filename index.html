@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>mcp radar</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="wrap">
+    <h1>mcp radar</h1>
+    <p class="sub">a lightweight directory of mcp servers. data auto-updates via github actions.</p>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <div class="filters">
+        <label class="field">
+          <span>search</span>
+          <input id="q" type="search" placeholder="name, description, tag" autocomplete="off" />
+        </label>
+
+        <label class="field">
+          <span>category</span>
+          <select id="category">
+            <option value="">all</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>tag</span>
+          <input id="tag" type="text" placeholder="e.g. python" autocomplete="off" />
+        </label>
+
+        <div class="field">
+          <span>sort</span>
+          <select id="sort">
+            <option value="stars">stars</option>
+            <option value="updated">recently updated</option>
+            <option value="name">name</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="meta">
+        <div id="status">loading…</div>
+        <div class="links">
+          <a href="./data/servers.json">servers.json</a>
+          <span class="sep">·</span>
+          <a href="./readme.html" id="readmeLink">readme</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="sponsorsPanel">
+      <h2>sponsors</h2>
+      <div id="sponsors" class="grid"></div>
+      <p class="fine">want a slot? put your checkout link in <code>data/sponsors.json</code>.</p>
+    </section>
+
+    <section class="panel">
+      <h2>servers</h2>
+      <div id="results" class="list"></div>
+    </section>
+  </main>
+
+  <footer class="wrap fine">
+    <span id="generatedAt"></span>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

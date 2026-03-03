@@ -1,0 +1,36 @@
+{
+  "generated_at": "1970-01-01T00:00:00+00:00",
+  "count": 3,
+  "servers": [
+    {
+      "name": "modelcontextprotocol/servers",
+      "url": "https://github.com/modelcontextprotocol/servers",
+      "description": "reference mcp servers (official)",
+      "category": "developer-tools",
+      "tags": ["official"],
+      "stars": null,
+      "last_updated": null,
+      "source": "seed"
+    },
+    {
+      "name": "github/github-mcp-server",
+      "url": "https://github.com/github/github-mcp-server",
+      "description": "github official mcp server",
+      "category": "version-control",
+      "tags": ["github"],
+      "stars": null,
+      "last_updated": null,
+      "source": "seed"
+    },
+    {
+      "name": "apappascs/mcp-servers-hub",
+      "url": "https://github.com/apappascs/mcp-servers-hub",
+      "description": "auto-updated mcp server hub",
+      "category": "aggregators",
+      "tags": ["directory"],
+      "stars": null,
+      "last_updated": null,
+      "source": "seed"
+    }
+  ]
+}
