@@ -37,26 +37,6 @@ function buildCategoryOptions(servers) {
   }
 }
 
-function renderSponsors(sponsors) {
-  const wrap = document.getElementById('sponsors');
-  wrap.innerHTML = '';
-
-  if (!Array.isArray(sponsors) || sponsors.length === 0) {
-    document.getElementById('sponsorsPanel').style.display = 'none';
-    return;
-  }
-
-  for (const s of sponsors.slice(0, 3)) {
-    const card = el('div', { class: 'card' }, [
-      el('div', { class: 'title' }, [
-        el('a', { href: s.url || '#', class: 'name', text: s.name || 'sponsor' }),
-        el('span', { class: 'badge', text: s.tagline || 'sponsor' })
-      ]),
-      el('div', { class: 'fine', text: s.blurb || '' })
-    ]);
-    wrap.appendChild(card);
-  }
-}
 
 function serverMatches(server, q, category, tag) {
   const text = [
@@ -136,8 +116,7 @@ async function main() {
   setSeoUrls();
 
   const serversPayload = await getJson('./data/servers.json');
-  const sponsors = await getJson('./data/sponsors.json').catch(() => []);
-
+ 
   const servers = Array.isArray(serversPayload) ? serversPayload : (serversPayload.servers || []);
   const generatedAt = serversPayload.generated_at || null;
 
