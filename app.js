@@ -112,6 +112,14 @@ function setSeoUrls() {
   if (ogUrl) ogUrl.setAttribute('content', url);
 }
 
+function debounce(fn, ms) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), ms);
+  };
+}
+
 async function main() {
   setSeoUrls();
 
@@ -124,8 +132,13 @@ async function main() {
   buildCategoryOptions(servers);
 
   const rerender = () => renderServers(servers);
-  for (const id of ['q', 'category', 'tag', 'sort']) {
-    document.getElementById(id).addEventListener('input', rerender);
+  const debouncedRerender = debounce(rerender, 150);
+
+  // text inputs → debounced; selects → immediate
+  for (const id of ['q', 'tag']) {
+    document.getElementById(id).addEventListener('input', debouncedRerender);
+  }
+  for (const id of ['category', 'sort']) {
     document.getElementById(id).addEventListener('change', rerender);
   }
 

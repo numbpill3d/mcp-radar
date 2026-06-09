@@ -37,18 +37,61 @@ def gh_headers() -> Dict[str, str]:
     return h
 
 
-def gh_repo_meta(github_id: str) -> Dict[str, Any]:
-    url = f"https://api.github.com/repos/{github_id}"
-    r = requests.get(url, headers=gh_headers(), timeout=60)
+CACHE_FILE = os.path.join(ROOT_DIR, "data", "repo_cache.json")
 
-    # handle renamed/deleted repos gracefully
-    if r.status_code >= 400:
-        return {}
 
+def _load_cache() -> dict:
     try:
-        return r.json()
-    except Exception:
+        with open(CACHE_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
         return {}
+
+
+def _save_cache(cache: dict) -> None:
+    os.makedirs(os.path.dirname(CACHE_FILE), exist_ok=True)
+    with open(CACHE_FILE, "w", encoding="utf-8") as f:
+        json.dump(cache, f, indent=2)
+
+
+def gh_repo_meta(github_id: str, cache_ttl_hours: int = 24) -> Dict[str, Any]:
+    cache = _load_cache()
+    now = datetime.now(timezone.utc).timestamp()
+
+    # check cache
+    cached = cache.get(github_id)
+    if cached and (now - cached.get("_fetched_at", 0)) < cache_ttl_hours * 3600:
+        return cached.get("data", {})
+
+    url = f"https://api.github.com/repos/{github_id}"
+    max_retries = 3
+
+    for attempt in range(max_retries):
+        r = requests.get(url, headers=gh_headers(), timeout=60)
+
+        if r.status_code == 429:
+            wait = 2 ** (attempt + 2)  # 4, 8, 16 seconds
+            print(f"rate limited — retrying in {wait}s (attempt {attempt + 1}/{max_retries})", file=sys.stderr)
+            import time
+            time.sleep(wait)
+            continue
+
+        # handle renamed/deleted repos gracefully
+        if r.status_code >= 400:
+            cache[github_id] = {"_fetched_at": now, "data": {}}
+            _save_cache(cache)
+            return {}
+
+        try:
+            data = r.json()
+            cache[github_id] = {"_fetched_at": now, "data": data}
+            _save_cache(cache)
+            return data
+        except Exception:
+            return {}
+
+    print(f"gave up on {github_id} after {max_retries} retries due to rate limiting", file=sys.stderr)
+    return {}
 
 
 def as_list(x: Any) -> List[str]:
