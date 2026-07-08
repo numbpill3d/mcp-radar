@@ -15,6 +15,7 @@ MCP_HUB_README = "https://raw.githubusercontent.com/apappascs/mcp-servers-hub/ma
 
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 OUT_PATH = os.path.join(ROOT_DIR, "data", "servers.json")
+SUPPLEMENTAL_PATH = os.path.join(ROOT_DIR, "data", "supplemental_servers.json")
 INDEX_PATH = os.path.join(ROOT_DIR, "index.html")
 ROBOTS_PATH = os.path.join(ROOT_DIR, "robots.txt")
 SITEMAP_PATH = os.path.join(ROOT_DIR, "sitemap.xml")
@@ -57,6 +58,27 @@ def as_list(x: Any) -> List[str]:
     if isinstance(x, list):
         return [str(i) for i in x if i]
     return [str(x)]
+
+
+def read_supplemental_servers() -> List[Dict[str, Any]]:
+    try:
+        with open(SUPPLEMENTAL_PATH, "r", encoding="utf-8") as f:
+            raw = json.load(f)
+    except FileNotFoundError:
+        return []
+
+    if not isinstance(raw, list):
+        raise ValueError("data/supplemental_servers.json must contain a list")
+
+    servers: List[Dict[str, Any]] = []
+    for index, item in enumerate(raw):
+        if not isinstance(item, dict):
+            raise ValueError(f"supplemental server {index} must be an object")
+        if not item.get("name") or not item.get("url"):
+            raise ValueError(f"supplemental server {index} needs name and url")
+        servers.append(item)
+
+    return servers
 
 
 def site_url_guess() -> str:
@@ -217,6 +239,13 @@ def main() -> int:
                 "source": "best-of-mcp-servers",
             }
         )
+
+    existing_urls = {str(server.get("url") or "").rstrip("/") for server in servers}
+    for server in read_supplemental_servers():
+        url = str(server.get("url") or "").rstrip("/")
+        if url and url not in existing_urls:
+            servers.append(server)
+            existing_urls.add(url)
 
     def sort_key(s: Dict[str, Any]):
         v = s.get("stars")
