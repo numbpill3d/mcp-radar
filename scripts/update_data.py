@@ -66,6 +66,15 @@ def normalize_url(url: Any) -> str:
     return str(url or "").strip().rstrip("/").lower()
 
 
+def url_identity_key(url: Any) -> str:
+    normalized = normalize_url(url)
+    parsed = urlparse(normalized)
+    if parsed.scheme in ("http", "https") and parsed.netloc:
+        path = parsed.path.rstrip("/")
+        return f"{parsed.netloc}{path}"
+    return normalized
+
+
 def validate_supplemental_url(index: int, raw_url: Any) -> str:
     url = str(raw_url or "").strip().rstrip("/")
     if not url:
@@ -82,6 +91,20 @@ def validate_supplemental_url(index: int, raw_url: Any) -> str:
 
 def read_optional_str(item: Dict[str, Any], key: str) -> str:
     return str(item.get(key) or "").strip()
+
+
+def read_required_str(item: Dict[str, Any], key: str, index: int) -> str:
+    value = read_optional_str(item, key)
+    if not value:
+        raise ValueError(f"supplemental server {index} needs {key}")
+    return value
+
+
+def read_required_list(item: Dict[str, Any], key: str, index: int) -> List[str]:
+    values = as_list(item.get(key))
+    if not values:
+        raise ValueError(f"supplemental server {index} needs {key}")
+    return values
 
 
 def read_optional_int(item: Dict[str, Any], key: str, index: int) -> Optional[int]:
@@ -101,11 +124,11 @@ def sanitize_supplemental_server(index: int, item: Dict[str, Any]) -> Dict[str, 
     return {
         "name": name,
         "url": validate_supplemental_url(index, item.get("url")),
-        "description": read_optional_str(item, "description"),
-        "category": read_optional_str(item, "category"),
-        "tags": as_list(item.get("tags")),
+        "description": read_required_str(item, "description", index),
+        "category": read_required_str(item, "category", index),
+        "tags": read_required_list(item, "tags", index),
         "stars": read_optional_int(item, "stars", index),
-        "last_updated": read_optional_str(item, "last_updated"),
+        "last_updated": read_required_str(item, "last_updated", index),
         "source": read_optional_str(item, "source") or "supplemental",
     }
 
@@ -297,9 +320,9 @@ def main() -> int:
             }
         )
 
-    existing_urls = {normalize_url(server.get("url")) for server in servers}
+    existing_urls = {url_identity_key(server.get("url")) for server in servers}
     for server in supplemental_servers_for_merge():
-        url = normalize_url(server.get("url"))
+        url = url_identity_key(server.get("url"))
         if url and url not in existing_urls:
             servers.append(server)
             existing_urls.add(url)
