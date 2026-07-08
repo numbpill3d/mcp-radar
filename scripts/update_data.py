@@ -5,6 +5,7 @@ import os
 import sys
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
+from urllib.parse import urlparse
 
 import html
 import requests
@@ -62,7 +63,51 @@ def as_list(x: Any) -> List[str]:
 
 
 def normalize_url(url: Any) -> str:
-    return str(url or "").rstrip("/").lower()
+    return str(url or "").strip().rstrip("/").lower()
+
+
+def validate_supplemental_url(index: int, raw_url: Any) -> str:
+    url = str(raw_url or "").strip().rstrip("/")
+    if not url:
+        raise ValueError(f"supplemental server {index} needs url")
+    if any(char.isspace() for char in url):
+        raise ValueError(f"supplemental server {index} url must not contain whitespace")
+
+    parsed = urlparse(url)
+    if parsed.scheme != "https" or not parsed.netloc:
+        raise ValueError(f"supplemental server {index} url must be an https URL")
+
+    return url
+
+
+def read_optional_str(item: Dict[str, Any], key: str) -> str:
+    return str(item.get(key) or "").strip()
+
+
+def read_optional_int(item: Dict[str, Any], key: str, index: int) -> Optional[int]:
+    value = item.get(key)
+    if value is None:
+        return None
+    if isinstance(value, bool) or not isinstance(value, int):
+        raise ValueError(f"supplemental server {index} {key} must be an integer")
+    return value
+
+
+def sanitize_supplemental_server(index: int, item: Dict[str, Any]) -> Dict[str, Any]:
+    name = read_optional_str(item, "name")
+    if not name:
+        raise ValueError(f"supplemental server {index} needs name")
+
+    return {
+        "name": name,
+        "url": validate_supplemental_url(index, item.get("url")),
+        "description": read_optional_str(item, "description"),
+        "category": read_optional_str(item, "category"),
+        "tags": as_list(item.get("tags")),
+        "stars": read_optional_int(item, "stars", index),
+        "last_updated": read_optional_str(item, "last_updated"),
+        "source": read_optional_str(item, "source") or "supplemental",
+    }
 
 
 def read_supplemental_servers() -> List[Dict[str, Any]]:
@@ -81,9 +126,7 @@ def read_supplemental_servers() -> List[Dict[str, Any]]:
     for index, item in enumerate(raw):
         if not isinstance(item, dict):
             raise ValueError(f"supplemental server {index} must be an object")
-        if not item.get("name") or not item.get("url"):
-            raise ValueError(f"supplemental server {index} needs name and url")
-        servers.append(item)
+        servers.append(sanitize_supplemental_server(index, item))
 
     return servers
 
