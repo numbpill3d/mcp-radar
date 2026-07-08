@@ -60,6 +60,10 @@ def as_list(x: Any) -> List[str]:
     return [str(x)]
 
 
+def normalize_url(url: Any) -> str:
+    return str(url or "").rstrip("/").lower()
+
+
 def read_supplemental_servers() -> List[Dict[str, Any]]:
     try:
         with open(SUPPLEMENTAL_PATH, "r", encoding="utf-8") as f:
@@ -240,9 +244,9 @@ def main() -> int:
             }
         )
 
-    existing_urls = {str(server.get("url") or "").rstrip("/") for server in servers}
+    existing_urls = {normalize_url(server.get("url")) for server in servers}
     for server in read_supplemental_servers():
-        url = str(server.get("url") or "").rstrip("/")
+        url = normalize_url(server.get("url"))
         if url and url not in existing_urls:
             servers.append(server)
             existing_urls.add(url)
