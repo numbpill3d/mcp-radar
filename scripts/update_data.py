@@ -131,6 +131,13 @@ def read_supplemental_servers() -> List[Dict[str, Any]]:
     return servers
 
 
+def supplemental_servers_for_merge() -> List[Dict[str, Any]]:
+    try:
+        return read_supplemental_servers()
+    except ValueError as exc:
+        raise ValueError(f"could not load supplemental servers: {exc}") from exc
+
+
 def site_url_guess() -> str:
     # priority: explicit env
     u = (os.environ.get("SITE_URL") or "").strip()
@@ -291,7 +298,7 @@ def main() -> int:
         )
 
     existing_urls = {normalize_url(server.get("url")) for server in servers}
-    for server in read_supplemental_servers():
+    for server in supplemental_servers_for_merge():
         url = normalize_url(server.get("url"))
         if url and url not in existing_urls:
             servers.append(server)
