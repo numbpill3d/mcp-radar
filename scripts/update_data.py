@@ -12,6 +12,7 @@ import yaml
 
 BEST_OF_YAML = "https://raw.githubusercontent.com/tolkonepiu/best-of-mcp-servers/main/projects.yaml"
 MCP_HUB_README = "https://raw.githubusercontent.com/apappascs/mcp-servers-hub/main/README.md"  # optional
+NO_STARS_SORT_VALUE = 10**12
 
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 OUT_PATH = os.path.join(ROOT_DIR, "data", "servers.json")
@@ -70,6 +71,8 @@ def read_supplemental_servers() -> List[Dict[str, Any]]:
             raw = json.load(f)
     except FileNotFoundError:
         return []
+    except json.JSONDecodeError as exc:
+        raise ValueError("data/supplemental_servers.json must be valid JSON") from exc
 
     if not isinstance(raw, list):
         raise ValueError("data/supplemental_servers.json must contain a list")
@@ -253,7 +256,7 @@ def main() -> int:
 
     def sort_key(s: Dict[str, Any]):
         v = s.get("stars")
-        return (-v) if isinstance(v, int) else (10**12)
+        return (-v) if isinstance(v, int) else NO_STARS_SORT_VALUE
 
     servers.sort(key=sort_key)
 
