@@ -1,0 +1,183 @@
+name: triage server submission
+
+# Automated submission pipeline for mcp-radar.
+# When a "Submit a server" issue is opened, this workflow:
+#   1. parses the issue form body
+#   2. validates the repo is a real, accessible GitHub repo
+#   3. fetches live metadata (stars, last push)
+#   4. rejects duplicates already in servers.json / supplemental_servers.json
+#   5. opens a PR adding the entry to data/supplemental_servers.json
+#      (human reviews/merges the PR — the safety gate)
+# Invalid submissions get a comment + `invalid` label instead.
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+  pull-requests: write
+  contents: read
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    if: contains(github.event.issue.labels.*.name, 'server-submission')
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: parse + validate + open PR
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue = context.payload.issue;
+            const body = issue.body || "";
+            const issueNum = issue.number;
+            const repo = context.repo;
+
+            // parse the issue form ("### field" headers)
+            function field(name) {
+              const re = new RegExp("### " + name + "\\s*\\n([\\s\\S]*?)(?=\\n### |$)");
+              const m = body.match(re);
+              return m ? m[1].trim() : "";
+            }
+            const name = field("Server name");
+            const repoUrl = field("GitHub repository URL");
+            const description = field("Description");
+            const category = field("Category");
+            const tagsRaw = field("Tags");
+
+            const fail = async (msg) => {
+              await github.rest.issues.createComment({
+                ...repo, issue_number: issueNum,
+                body: "❌ Submission rejected:\\n\\n" + msg +
+                      "\\n\\nPlease fix and reopen, or edit this issue's body."
+              });
+              try {
+                await github.rest.issues.addLabels({
+                  ...repo, issue_number: issueNum, labels: ["invalid"]
+                });
+              } catch (e) { /* label may already exist */ }
+            };
+
+            if (!name || !repoUrl || !description || !category || !tagsRaw) {
+              await fail("- Every field in the submission form is required.");
+              return;
+            }
+
+            // validate github repo url shape
+            const m = repoUrl.match(/^https:\/\/github\.com\/([^\/]+)\/([^\/\s]+?)\/?$/);
+            if (!m) {
+              await fail("- `GitHub repository URL` must look like `https://github.com/owner/repo`.");
+              return;
+            }
+            const owner = m[1], rname = m[2];
+            const full = owner + "/" + rname;
+
+            // fetch live repo metadata
+            let meta;
+            try {
+              meta = await github.rest.repos.get({ owner, repo: rname });
+            } catch (e) {
+              await fail("- Could not fetch `" + full + "`. Is the repo public and the URL correct?");
+              return;
+            }
+            const stars = meta.data.stargazers_count;
+            const lastUpdated = meta.data.pushed_at;
+
+            // dedupe against existing directory
+            let servers;
+            try {
+              const f = await github.rest.repos.getContent({
+                ...repo, path: "data/servers.json", ref: "main"
+              });
+              servers = JSON.parse(Buffer.from(f.data.content, "base64").toString());
+            } catch (e) {
+              servers = { servers: [] };
+            }
+            const norm = (u) => u.replace(/\/+$/, "").toLowerCase();
+            const dup = (servers.servers || []).find(
+              s => norm(s.url || "") === norm("https://github.com/" + full)
+            );
+            if (dup) {
+              await fail("- `" + full + "` is already in the directory (source: " + (dup.source || "unknown") + ").");
+              return;
+            }
+
+            // build the supplemental entry
+            const entry = {
+              name,
+              url: "https://github.com/" + full,
+              description,
+              category,
+              tags: tagsRaw.split(",").map(t => t.trim()).filter(Boolean),
+              stars,
+              last_updated: lastUpdated,
+              source: "supplemental"
+            };
+
+            // read current supplemental list
+            let suppRaw, suppSha;
+            try {
+              const f = await github.rest.repos.getContent({
+                ...repo, path: "data/supplemental_servers.json", ref: "main"
+              });
+              suppRaw = Buffer.from(f.data.content, "base64").toString();
+              suppSha = f.data.sha;
+            } catch (e) {
+              suppRaw = "[]";
+              suppSha = null;
+            }
+            const supp = JSON.parse(suppRaw);
+            if (!Array.isArray(supp)) {
+              await fail("- `data/supplemental_servers.json` is malformed (not a list).");
+              return;
+            }
+            supp.push(entry);
+            const newContent = JSON.stringify(supp, null, 2) + "\n";
+
+            // open a PR with the addition
+            const branch = "submission/issue-" + issueNum;
+            const baseRef = await github.rest.git.getRef({ ...repo, ref: "heads/main" });
+            await github.rest.git.createRef({
+              ...repo, ref: "refs/heads/" + branch, sha: baseRef.data.object.sha
+            }).catch(async () => {
+              // branch may already exist from a prior run; force-update
+              await github.rest.git.updateRef({
+                ...repo, ref: "heads/" + branch, sha: baseRef.data.object.sha, force: true
+              });
+            });
+
+            let fileSha = suppSha;
+            try {
+              const cur = await github.rest.repos.getContent({
+                ...repo, path: "data/supplemental_servers.json", ref: branch
+              });
+              fileSha = cur.data.sha;
+            } catch (e) { /* new file on branch */ }
+
+            await github.rest.repos.createOrUpdateFileContents({
+              ...repo, path: "data/supplemental_servers.json",
+              branch, content: Buffer.from(newContent).toString("base64"),
+              message: "submission: add " + name + " (issue #" + issueNum + ")",
+              sha: fileSha
+            });
+
+            const pr = await github.rest.pulls.create({
+              ...repo,
+              title: "Add " + name + " (submission #" + issueNum + ")",
+              head: branch, base: "main",
+              body: "Automated submission from issue #" + issueNum +
+                    " by @" + issue.user.login + ".\\n\\n" +
+                    "```json\\n" + JSON.stringify(entry, null, 2) + "\\n```\\n\\n" +
+                    "Review and merge to publish. Merging triggers the daily update; " +
+                    "or run the `update data` workflow manually to regenerate `servers.json` immediately."
+            });
+
+            await github.rest.issues.createComment({
+              ...repo, issue_number: issueNum,
+              body: "✅ Validated `" + full + "` (stars: " + stars +
+                    ", last push: " + lastUpdated + "). Opened PR #" + pr.data.number +
+                    " — a maintainer will review and merge to publish."
+            });

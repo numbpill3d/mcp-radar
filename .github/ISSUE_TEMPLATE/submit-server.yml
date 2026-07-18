@@ -1,0 +1,62 @@
+name: Submit a server
+description: Add an MCP server to the mcp-radar directory.
+title: "[Server] "
+labels: ["server-submission"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Server name
+      description: Short name for the server (e.g. x402-crypto-api).
+      placeholder: my-awesome-mcp
+    validations:
+      required: true
+  - type: input
+    id: repo_url
+    attributes:
+      label: GitHub repository URL
+      description: The canonical https://github.com/owner/repo URL for the server.
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: One or two sentences describing what the server does.
+      placeholder: Paid crypto & Web3 data API for AI agents over the x402 protocol.
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Pick the closest category.
+      options:
+        - finance
+        - ecommerce
+        - social-media
+        - developer-tools
+        - data
+        - productivity
+        - web3
+        - ai
+        - search
+        - other
+    validations:
+      required: true
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Comma-separated keywords (e.g. crypto, x402, payments).
+      placeholder: crypto, x402, payments
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirm
+      options:
+        - label: This is a real, publicly-accessible MCP server with a GitHub repo.
+          required: true
