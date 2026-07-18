@@ -30,23 +30,6 @@ a small github pages site that publishes an auto-updating `servers.json`.
 - workflow: `.github/workflows/update.yml`
 - script: `scripts/update_data.py`
 
-## monetization paths (non-spammy)
-
-a static site can still make money if it has distribution.
-
-- sponsorship slots
-  - keep 3 small sponsor cards in `data/sponsors.json`
-  - sell them as monthly placements (fixed price)
-
-- paid curation
-  - offer a “top 20 mcp servers for x” curated pack (pdf + config snippets)
-  - link to a checkout (gumroad/stripe)
-
-- paid alerts
-  - free: the directory
-  - paid: a weekly email of new/trending servers + your notes
-  - use any newsletter provider; the site is just the landing page
-
 ## local dev
 
 open `index.html` in a browser.
