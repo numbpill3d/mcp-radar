@@ -13,5 +13,53 @@
     "stars": 135,
     "last_updated": "2026-07-08T15:57:40Z",
     "source": "supplemental"
+  },
+  {
+    "name": "x402-crypto-api",
+    "url": "https://github.com/qanzhi111/x402-crypto-api",
+    "description": "Paid crypto & Web3 security data API for AI agents. Real-time prices, market data, address analysis, token security checks, contract risk analysis, and full on-chain investigations — all accessible via x402 payment protocol (USDC on Base).",
+    "category": "finance",
+    "tags": [
+      "crypto",
+      "web3",
+      "x402",
+      "payments",
+      "blockchain"
+    ],
+    "stars": 0,
+    "last_updated": "2026-06-02T03:40:48Z",
+    "source": "supplemental"
+  },
+  {
+    "name": "agent-payment-mcp",
+    "url": "https://github.com/evidai/agent-payment-mcp",
+    "description": "x402-native payment rail for AI agents. Returns 402 + accepts[], the agent presents a hard-capped Buyer Key, mints a single-use Pay Token (JWT), and passes the gateway with a Bearer. Dual rail: Stripe off-session (USD) and USDC on Base. Spend-capped, custody-free, no per-call API key.",
+    "category": "finance",
+    "tags": [
+      "payments",
+      "x402",
+      "agents",
+      "stripe",
+      "web3"
+    ],
+    "stars": 2,
+    "last_updated": "2026-06-17T20:20:09Z",
+    "source": "supplemental"
+  },
+  {
+    "name": "BuyWhere MCP",
+    "url": "https://github.com/BuyWhere/buywhere-mcp",
+    "description": "MCP server for Thai/SG/e-commerce price comparison across FairPrice, Shopee, Lazada and 15+ merchants. Search and compare products from Singapore, SEA, and US markets via Model Context Protocol.",
+    "category": "ecommerce",
+    "tags": [
+      "ecommerce",
+      "price-comparison",
+      "shopee",
+      "lazada",
+      "search"
+    ],
+    "stars": 6,
+    "last_updated": "2026-07-18T02:26:28Z",
+    "source": "supplemental"
   }
 ]
