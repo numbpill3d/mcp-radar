@@ -5,6 +5,7 @@ import os
 import sys
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
+from urllib.parse import urlparse
 
 import html
 import requests
@@ -12,9 +13,11 @@ import yaml
 
 BEST_OF_YAML = "https://raw.githubusercontent.com/tolkonepiu/best-of-mcp-servers/main/projects.yaml"
 MCP_HUB_README = "https://raw.githubusercontent.com/apappascs/mcp-servers-hub/main/README.md"  # optional
+NO_STARS_SORT_VALUE = 10**12
 
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 OUT_PATH = os.path.join(ROOT_DIR, "data", "servers.json")
+SUPPLEMENTAL_PATH = os.path.join(ROOT_DIR, "data", "supplemental_servers.json")
 INDEX_PATH = os.path.join(ROOT_DIR, "index.html")
 ROBOTS_PATH = os.path.join(ROOT_DIR, "robots.txt")
 SITEMAP_PATH = os.path.join(ROOT_DIR, "sitemap.xml")
@@ -57,6 +60,105 @@ def as_list(x: Any) -> List[str]:
     if isinstance(x, list):
         return [str(i) for i in x if i]
     return [str(x)]
+
+
+def normalize_url(url: Any) -> str:
+    return str(url or "").strip().rstrip("/").lower()
+
+
+def url_identity_key(url: Any) -> str:
+    normalized = normalize_url(url)
+    parsed = urlparse(normalized)
+    if parsed.scheme in ("http", "https") and parsed.netloc:
+        path = parsed.path.rstrip("/")
+        return f"{parsed.netloc}{path}"
+    return normalized
+
+
+def validate_supplemental_url(index: int, raw_url: Any) -> str:
+    url = str(raw_url or "").strip().rstrip("/")
+    if not url:
+        raise ValueError(f"supplemental server {index} needs url")
+    if any(char.isspace() for char in url):
+        raise ValueError(f"supplemental server {index} url must not contain whitespace")
+
+    parsed = urlparse(url)
+    if parsed.scheme != "https" or not parsed.netloc:
+        raise ValueError(f"supplemental server {index} url must be an https URL")
+
+    return url
+
+
+def read_optional_str(item: Dict[str, Any], key: str) -> str:
+    return str(item.get(key) or "").strip()
+
+
+def read_required_str(item: Dict[str, Any], key: str, index: int) -> str:
+    value = read_optional_str(item, key)
+    if not value:
+        raise ValueError(f"supplemental server {index} needs {key}")
+    return value
+
+
+def read_required_list(item: Dict[str, Any], key: str, index: int) -> List[str]:
+    values = as_list(item.get(key))
+    if not values:
+        raise ValueError(f"supplemental server {index} needs {key}")
+    return values
+
+
+def read_optional_int(item: Dict[str, Any], key: str, index: int) -> Optional[int]:
+    value = item.get(key)
+    if value is None:
+        return None
+    if isinstance(value, bool) or not isinstance(value, int):
+        raise ValueError(f"supplemental server {index} {key} must be an integer")
+    return value
+
+
+def sanitize_supplemental_server(index: int, item: Dict[str, Any]) -> Dict[str, Any]:
+    name = read_optional_str(item, "name")
+    if not name:
+        raise ValueError(f"supplemental server {index} needs name")
+
+    return {
+        "name": name,
+        "url": validate_supplemental_url(index, item.get("url")),
+        "description": read_required_str(item, "description", index),
+        "category": read_required_str(item, "category", index),
+        "tags": read_required_list(item, "tags", index),
+        "stars": read_optional_int(item, "stars", index),
+        "last_updated": read_required_str(item, "last_updated", index),
+        "source": read_optional_str(item, "source") or "supplemental",
+    }
+
+
+def read_supplemental_servers() -> List[Dict[str, Any]]:
+    try:
+        with open(SUPPLEMENTAL_PATH, "r", encoding="utf-8") as f:
+            raw = json.load(f)
+    except FileNotFoundError:
+        return []
+    except json.JSONDecodeError as exc:
+        raise ValueError("data/supplemental_servers.json must be valid JSON") from exc
+
+    if not isinstance(raw, list):
+        raise ValueError("data/supplemental_servers.json must contain a list")
+
+    servers: List[Dict[str, Any]] = []
+    for index, item in enumerate(raw):
+        if not isinstance(item, dict):
+            raise ValueError(f"supplemental server {index} must be an object")
+        servers.append(sanitize_supplemental_server(index, item))
+
+    return servers
+
+
+def supplemental_servers_for_merge() -> List[Dict[str, Any]]:
+    try:
+        return read_supplemental_servers()
+    except ValueError as exc:
+        raise ValueError(f"could not load supplemental servers: {exc}") from exc
 
 
 def site_url_guess() -> str:
@@ -218,9 +320,16 @@ def main() -> int:
             }
         )
 
+    existing_urls = {url_identity_key(server.get("url")) for server in servers}
+    for server in supplemental_servers_for_merge():
+        url = url_identity_key(server.get("url"))
+        if url and url not in existing_urls:
+            servers.append(server)
+            existing_urls.add(url)
+
     def sort_key(s: Dict[str, Any]):
         v = s.get("stars")
-        return (-v) if isinstance(v, int) else (10**12)
+        return (-v) if isinstance(v, int) else NO_STARS_SORT_VALUE
 
     servers.sort(key=sort_key)
 
