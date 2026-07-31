@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T09:05:09+00:00",
+  "generated_at": "2026-07-31T09:19:13+00:00",
   "count": 409,
   "servers": [
     {
@@ -8,7 +8,7 @@
       "description": "MCP tool access to MarkItDown -- a library that converts many file formats (local or remote) to Markdown for LLM consumption.",
       "category": "file-systems",
       "tags": [],
-      "stars": 170169,
+      "stars": 170432,
       "last_updated": "2026-07-29T18:18:09Z",
       "source": "best-of-mcp-servers"
     },
@@ -18,7 +18,7 @@
       "description": "MCP server that exercises all the features of the MCP protocol.",
       "category": "other-tools-and-integrations",
       "tags": [],
-      "stars": 89042,
+      "stars": 89075,
       "last_updated": "2026-07-29T23:09:46Z",
       "source": "best-of-mcp-servers"
     },
@@ -28,8 +28,8 @@
       "description": "Discovery, exploration, reporting and root cause analysis using all observability data, including metrics, logs, systems, containers, processes, and network connections.",
       "category": "monitoring",
       "tags": [],
-      "stars": 79923,
-      "last_updated": "2026-07-30T08:26:34Z",
+      "stars": 79952,
+      "last_updated": "2026-07-31T09:09:30Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -38,8 +38,8 @@
       "description": "Context compression layer for AI agents. Compresses tool outputs, logs, RAG chunks, files, and conversation history before they reach the LLM, with reversible retrieval through MCP tools.",
       "category": "knowledge-and-memory",
       "tags": [],
-      "stars": 63294,
-      "last_updated": "2026-07-30T07:31:19Z",
+      "stars": 63489,
+      "last_updated": "2026-07-31T06:06:03Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -48,7 +48,7 @@
       "description": "Up-to-date code documentation for LLMs and AI code editors.",
       "category": "knowledge-and-memory",
       "tags": [],
-      "stars": 59992,
+      "stars": 60057,
       "last_updated": "2026-07-30T08:52:35Z",
       "source": "best-of-mcp-servers"
     },
@@ -58,7 +58,7 @@
       "description": "Connect and unify data across various platforms and databases with MindsDB as a single MCP server.",
       "category": "aggregators",
       "tags": [],
-      "stars": 39507,
+      "stars": 39508,
       "last_updated": "2026-07-10T16:53:47Z",
       "source": "best-of-mcp-servers"
     },
@@ -68,7 +68,7 @@
       "description": "Browser automation capabilities using Puppeteer, both support local and remote browser connection.",
       "category": "browser-automation",
       "tags": [],
-      "stars": 38369,
+      "stars": 38374,
       "last_updated": "2026-07-01T03:03:19Z",
       "source": "best-of-mcp-servers"
     },
@@ -78,8 +78,8 @@
       "description": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 66 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.\n",
       "category": "developer-tools",
       "tags": [],
-      "stars": 36540,
-      "last_updated": "2026-07-30T08:26:36Z",
+      "stars": 36713,
+      "last_updated": "2026-07-31T08:48:06Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -88,7 +88,7 @@
       "description": "Official Microsoft Playwright MCP server, enabling LLMs to interact with web pages through structured accessibility snapshots",
       "category": "browser-automation",
       "tags": [],
-      "stars": 35627,
+      "stars": 35666,
       "last_updated": "2026-07-25T08:58:14Z",
       "source": "best-of-mcp-servers"
     },
@@ -98,8 +98,8 @@
       "description": "Official GitHub server for integration with repository management, PRs, issues, and more.",
       "category": "version-control",
       "tags": [],
-      "stars": 31843,
-      "last_updated": "2026-07-30T08:04:10Z",
+      "stars": 31862,
+      "last_updated": "2026-07-31T07:49:15Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -108,8 +108,8 @@
       "description": "Memory manager for AI apps and Agents using various graph and vector stores and allowing ingestion from 30+ data sources.",
       "category": "knowledge-and-memory",
       "tags": [],
-      "stars": 29579,
-      "last_updated": "2026-07-30T08:45:06Z",
+      "stars": 29615,
+      "last_updated": "2026-07-31T09:01:40Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -118,7 +118,7 @@
       "description": "AI-powered task management system for AI-driven development. Features PRD parsing, task expansion, multi-provider support (Claude, OpenAI, Gemini, Perplexity, xAI), and selective tool loading for optimized context usage.",
       "category": "developer-tools",
       "tags": [],
-      "stars": 27922,
+      "stars": 27927,
       "last_updated": "2026-04-28T13:27:12Z",
       "source": "best-of-mcp-servers"
     },
@@ -128,7 +128,7 @@
       "description": "A fully-featured coding agent that relies on symbolic code operations by using language servers.",
       "category": "coding-agents",
       "tags": [],
-      "stars": 27191,
+      "stars": 27252,
       "last_updated": "2026-07-30T08:43:59Z",
       "source": "best-of-mcp-servers"
     },
@@ -138,8 +138,8 @@
       "description": "A high-level framework for building MCP servers in Python",
       "category": "other-tools-and-integrations",
       "tags": [],
-      "stars": 26965,
-      "last_updated": "2026-07-29T18:40:00Z",
+      "stars": 26989,
+      "last_updated": "2026-07-30T20:23:55Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -148,7 +148,7 @@
       "description": "MCP server for working with Blender",
       "category": "art-and-culture",
       "tags": [],
-      "stars": 25125,
+      "stars": 25182,
       "last_updated": "2026-07-29T11:02:26Z",
       "source": "best-of-mcp-servers"
     },
@@ -158,8 +158,8 @@
       "description": "Automates browser-based workflows using LLMs and computer vision — navigate pages, fill forms, extract data, handle authentication, and automate any website via natural language",
       "category": "browser-automation",
       "tags": [],
-      "stars": 22635,
-      "last_updated": "2026-07-30T08:38:46Z",
+      "stars": 22638,
+      "last_updated": "2026-07-31T09:07:04Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -168,8 +168,8 @@
       "description": "Local-first system capturing screen/audio with timestamped indexing, SQL/embedding storage, semantic search, LLM-powered history analysis, and event-triggered actions - enables building context-aware AI agents through a NextJS plugin ecosystem.",
       "category": "other-tools-and-integrations",
       "tags": [],
-      "stars": 20624,
-      "last_updated": "2026-07-30T04:03:55Z",
+      "stars": 20644,
+      "last_updated": "2026-07-31T04:23:25Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -178,8 +178,8 @@
       "description": "Run Python code in a secure sandbox via MCP tool calls.",
       "category": "code-execution",
       "tags": [],
-      "stars": 18892,
-      "last_updated": "2026-07-30T08:27:40Z",
+      "stars": 18923,
+      "last_updated": "2026-07-31T08:30:15Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -188,8 +188,8 @@
       "description": "Open source MCP server specializing in easy, fast, and secure tools for Databases.",
       "category": "databases",
       "tags": [],
-      "stars": 16064,
-      "last_updated": "2026-07-29T23:44:11Z",
+      "stars": 16087,
+      "last_updated": "2026-07-31T09:06:27Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -198,7 +198,7 @@
       "description": "Provide coding agents direct access to Figma data to help them one-shot design implementation.",
       "category": "developer-tools",
       "tags": [],
-      "stars": 15540,
+      "stars": 15551,
       "last_updated": "2026-07-03T14:24:36Z",
       "source": "best-of-mcp-servers"
     },
@@ -208,7 +208,7 @@
       "description": "Remote Storage Access: SFTP, S3, FTP, SMB, NFS, WebDAV, GIT, FTPS, gcloud, azure blob, sharepoint, etc.",
       "category": "file-systems",
       "tags": [],
-      "stars": 14430,
+      "stars": 14433,
       "last_updated": "2026-07-27T03:58:22Z",
       "source": "best-of-mcp-servers"
     },
@@ -218,8 +218,8 @@
       "description": "An MCP server for Inbox Zero. Adds functionality on top of Gmail like finding out which emails you need to reply to or need to follow up on.",
       "category": "communication",
       "tags": [],
-      "stars": 11773,
-      "last_updated": "2026-07-30T07:03:23Z",
+      "stars": 11803,
+      "last_updated": "2026-07-31T01:05:41Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -228,8 +228,8 @@
       "description": "Connect with 2,500 APIs with 8,000+ prebuilt tools, and manage servers for your users, in your own app.",
       "category": "aggregators",
       "tags": [],
-      "stars": 11581,
-      "last_updated": "2026-07-30T06:30:29Z",
+      "stars": 11585,
+      "last_updated": "2026-07-31T08:58:31Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -238,8 +238,8 @@
       "description": "MCP server for IDA Pro, allowing you to perform binary analysis with AI assistants. This plugin implement decompilation, disassembly and allows you to generate malware analysis reports automatically.",
       "category": "security",
       "tags": [],
-      "stars": 10912,
-      "last_updated": "2026-07-28T12:07:02Z",
+      "stars": 10951,
+      "last_updated": "2026-07-30T22:40:18Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -248,7 +248,7 @@
       "description": "A Model Context Protocol server for Ghidra that enables LLMs to autonomously reverse engineer applications. Provides tools for decompiling binaries, renaming methods and data, and listing methods, classes, imports, and exports.",
       "category": "security",
       "tags": [],
-      "stars": 9635,
+      "stars": 9655,
       "last_updated": "2025-06-23T04:18:18Z",
       "source": "best-of-mcp-servers"
     },
@@ -258,8 +258,8 @@
       "description": "AWS MCP servers for seamless integration with AWS services and resources.",
       "category": "cloud-platforms",
       "tags": [],
-      "stars": 9516,
-      "last_updated": "2026-07-30T05:57:12Z",
+      "stars": 9519,
+      "last_updated": "2026-07-31T06:04:53Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -268,7 +268,7 @@
       "description": "A swiss-army-knife that can manage/execute programs and read/write/search/edit code and text files.",
       "category": "command-line",
       "tags": [],
-      "stars": 8967,
+      "stars": 9004,
       "last_updated": "2026-07-30T08:15:01Z",
       "source": "best-of-mcp-servers"
     },
@@ -278,7 +278,7 @@
       "description": "gitmcp.io is a generic remote MCP server to connect to ANY GitHub repository or project for documentation",
       "category": "developer-tools",
       "tags": [],
-      "stars": 8302,
+      "stars": 8305,
       "last_updated": "2026-05-08T14:21:24Z",
       "source": "best-of-mcp-servers"
     },
@@ -288,7 +288,7 @@
       "description": "Automate your local Chrome browser",
       "category": "browser-automation",
       "tags": [],
-      "stars": 6903,
+      "stars": 6908,
       "last_updated": "2025-04-24T21:49:44Z",
       "source": "best-of-mcp-servers"
     },
@@ -298,7 +298,7 @@
       "description": "An MCP server for searching your personal WhatsApp messages, contacts and sending messages to individuals or groups",
       "category": "communication",
       "tags": [],
-      "stars": 5958,
+      "stars": 5963,
       "last_updated": "2025-07-13T17:22:00Z",
       "source": "best-of-mcp-servers"
     },
@@ -318,7 +318,7 @@
       "description": "MCP Server for Android/iOS application and device automation, development and app scraping. Simulator/Emulator/Physical devices like iPhone, Google Pixel, Samsung supported.",
       "category": "developer-tools",
       "tags": [],
-      "stars": 5700,
+      "stars": 5720,
       "last_updated": "2026-07-12T10:47:06Z",
       "source": "best-of-mcp-servers"
     },
@@ -328,7 +328,7 @@
       "description": "MCP server for Atlassian products (Confluence and Jira). Supports Confluence Cloud, Jira Cloud, and Jira Server/Data Center. Provides comprehensive tools for searching, reading, creating, and managing content across Atlassian workspaces.",
       "category": "support-and-service-management",
       "tags": [],
-      "stars": 5670,
+      "stars": 5678,
       "last_updated": "2026-07-28T20:43:12Z",
       "source": "best-of-mcp-servers"
     },
@@ -338,7 +338,7 @@
       "description": "An MCP server using Playwright for browser automation and webscrapping",
       "category": "browser-automation",
       "tags": [],
-      "stars": 5616,
+      "stars": 5620,
       "last_updated": "2025-12-13T04:28:38Z",
       "source": "best-of-mcp-servers"
     },
@@ -348,7 +348,7 @@
       "description": "Create crafted UI components inspired by the best 21st.dev design engineers.",
       "category": "developer-tools",
       "tags": [],
-      "stars": 5553,
+      "stars": 5558,
       "last_updated": "2026-07-24T23:30:26Z",
       "source": "best-of-mcp-servers"
     },
@@ -358,8 +358,8 @@
       "description": "Baserow database integration with table search, list, and row create, read, update, and delete capabilities.",
       "category": "databases",
       "tags": [],
-      "stars": 5450,
-      "last_updated": "2026-07-30T08:01:22Z",
+      "stars": 5475,
+      "last_updated": "2026-07-31T06:51:56Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -368,7 +368,7 @@
       "description": "A MCP server for interacting with the Godot game engine, providing tools for editing, running, debugging, and managing scenes in Godot projects.",
       "category": "gaming",
       "tags": [],
-      "stars": 4973,
+      "stars": 4978,
       "last_updated": "2026-04-16T23:37:00Z",
       "source": "best-of-mcp-servers"
     },
@@ -378,7 +378,7 @@
       "description": "A Model Context Protocol (MCP) server lets AI assistants like Claude use the Exa AI Search API for web searches. This setup allows AI models to get real-time web information in a safe and controlled way.",
       "category": "search-data-extraction",
       "tags": [],
-      "stars": 4800,
+      "stars": 4802,
       "last_updated": "2026-07-24T17:07:01Z",
       "source": "best-of-mcp-servers"
     },
@@ -388,7 +388,7 @@
       "description": "A Model Context Protocol server for generating visual charts using AntV.",
       "category": "customer-data-platforms",
       "tags": [],
-      "stars": 4269,
+      "stars": 4271,
       "last_updated": "2026-05-06T07:58:59Z",
       "source": "best-of-mcp-servers"
     },
@@ -398,7 +398,7 @@
       "description": "Interacting with Obsidian via REST API",
       "category": "other-tools-and-integrations",
       "tags": [],
-      "stars": 4230,
+      "stars": 4237,
       "last_updated": "2026-05-15T10:25:32Z",
       "source": "best-of-mcp-servers"
     },
@@ -418,7 +418,7 @@
       "description": "An Excel manipulation server providing workbook creation, data operations, formatting, and advanced features (charts, pivot tables, formulae).",
       "category": "developer-tools",
       "tags": [],
-      "stars": 4077,
+      "stars": 4083,
       "last_updated": "2026-04-12T06:14:45Z",
       "source": "best-of-mcp-servers"
     },
@@ -428,7 +428,7 @@
       "description": "An MCP server that indexes local code into a graph database to provide context to AI assistants with a graphical code visualizations for humans.",
       "category": "coding-agents",
       "tags": [],
-      "stars": 4022,
+      "stars": 4024,
       "last_updated": "2026-07-29T23:34:02Z",
       "source": "best-of-mcp-servers"
     },
@@ -439,7 +439,7 @@
       "category": "cloud-platforms",
       "tags": [],
       "stars": 4010,
-      "last_updated": "2026-07-30T08:43:44Z",
+      "last_updated": "2026-07-30T19:36:45Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -448,7 +448,7 @@
       "description": "Containerized environments for coding agents. Multiple agents can work independently, isolated in fresh containers and git branches. No conflicts, many experiments. Full execution history, terminal access to agent environments, git workflow. Any agent/model/infra stack.",
       "category": "code-execution",
       "tags": [],
-      "stars": 3922,
+      "stars": 3923,
       "last_updated": "2026-06-12T21:35:51Z",
       "source": "best-of-mcp-servers"
     },
@@ -458,8 +458,8 @@
       "description": "Tools and templates to create validated and maintainable data charts and dashboards.",
       "category": "data-science-tools",
       "tags": [],
-      "stars": 3768,
-      "last_updated": "2026-07-29T23:19:49Z",
+      "stars": 3767,
+      "last_updated": "2026-07-30T23:21:24Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -468,7 +468,7 @@
       "description": "MCP Server for Unity Editor and for a game made with Unity",
       "category": "gaming",
       "tags": [],
-      "stars": 3740,
+      "stars": 3757,
       "last_updated": "2026-07-28T23:14:33Z",
       "source": "best-of-mcp-servers"
     },
@@ -488,8 +488,8 @@
       "description": "Connect AI agents to 600+ integrations with a single interface - OAuth, scaling, and monitoring included",
       "category": "other-tools-and-integrations",
       "tags": [],
-      "stars": 3323,
-      "last_updated": "2026-07-29T16:30:06Z",
+      "stars": 3324,
+      "last_updated": "2026-07-31T08:14:50Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -498,8 +498,8 @@
       "description": "Search dashboards, investigate incidents and query datasources in your Grafana instance",
       "category": "monitoring",
       "tags": [],
-      "stars": 3302,
-      "last_updated": "2026-07-30T07:54:37Z",
+      "stars": 3305,
+      "last_updated": "2026-07-30T23:13:50Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -508,7 +508,7 @@
       "description": "A high-level framework for building MCP servers in TypeScript",
       "category": "other-tools-and-integrations",
       "tags": [],
-      "stars": 3241,
+      "stars": 3243,
       "last_updated": "2026-07-27T18:53:14Z",
       "source": "best-of-mcp-servers"
     },
@@ -518,7 +518,7 @@
       "description": "All-in-one MCP server for Postgres development and operations, with tools for performance analysis, tuning, and health checks",
       "category": "databases",
       "tags": [],
-      "stars": 3136,
+      "stars": 3142,
       "last_updated": "2026-01-22T16:24:36Z",
       "source": "best-of-mcp-servers"
     },
@@ -528,7 +528,7 @@
       "description": "Search ArXiv research papers",
       "category": "search-data-extraction",
       "tags": [],
-      "stars": 3005,
+      "stars": 3009,
       "last_updated": "2026-07-29T00:50:56Z",
       "source": "best-of-mcp-servers"
     },
@@ -538,8 +538,8 @@
       "description": "Comprehensive Google Workspace MCP server with full support for Google Calendar, Drive, Gmail, and Docs, Forms, Chats, Slides and Sheets over stdio, Streamable HTTP and SSE transports.",
       "category": "workplace-and-productivity",
       "tags": [],
-      "stars": 2938,
-      "last_updated": "2026-07-29T20:58:33Z",
+      "stars": 2944,
+      "last_updated": "2026-07-30T23:33:10Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -548,7 +548,7 @@
       "description": "MCP server that gives AI assistants seamless access to shadcn/ui v4 components, blocks, demos, and metadata.",
       "category": "developer-tools",
       "tags": [],
-      "stars": 2898,
+      "stars": 2902,
       "last_updated": "2026-05-16T13:09:07Z",
       "source": "best-of-mcp-servers"
     },
@@ -558,7 +558,7 @@
       "description": "An MCP server to convert almost any file or web content into Markdown",
       "category": "data-science-tools",
       "tags": [],
-      "stars": 2897,
+      "stars": 2896,
       "last_updated": "2026-07-30T05:23:35Z",
       "source": "best-of-mcp-servers"
     },
@@ -569,7 +569,7 @@
       "category": "databases",
       "tags": [],
       "stars": 2843,
-      "last_updated": "2026-07-30T06:59:11Z",
+      "last_updated": "2026-07-30T14:39:38Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -578,7 +578,7 @@
       "description": "JADX-AI-MCP is a plugin and MCP Server for the JADX decompiler that integrates directly with Model Context Protocol (MCP) to provide live reverse engineering support with LLMs like Claude.",
       "category": "security",
       "tags": [],
-      "stars": 2579,
+      "stars": 2581,
       "last_updated": "2026-05-28T19:29:14Z",
       "source": "best-of-mcp-servers"
     },
@@ -598,7 +598,7 @@
       "description": "Discover, extract, and interact with the web - one interface powering automated access across the public internet.",
       "category": "search-data-extraction",
       "tags": [],
-      "stars": 2546,
+      "stars": 2550,
       "last_updated": "2026-07-27T12:20:50Z",
       "source": "best-of-mcp-servers"
     },
@@ -608,8 +608,8 @@
       "description": "Use 3,000+ pre-built cloud tools, known as Actors, to extract data from websites, e-commerce, social media, search engines, maps, and more",
       "category": "other-tools-and-integrations",
       "tags": [],
-      "stars": 2373,
-      "last_updated": "2026-07-29T17:16:34Z",
+      "stars": 2393,
+      "last_updated": "2026-07-31T07:28:25Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -628,8 +628,8 @@
       "description": "Beelzebub is a honeypot framework that lets you build honeypot tools using MCP. Its purpose is to detect prompt injection or malicious agent behavior. The underlying idea is to provide the agent with tools it would never use in its normal work.",
       "category": "security",
       "tags": [],
-      "stars": 2116,
-      "last_updated": "2026-07-29T15:17:35Z",
+      "stars": 2118,
+      "last_updated": "2026-07-30T10:31:02Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -648,8 +648,8 @@
       "description": "Yet another CLI tool for testing MCP servers",
       "category": "other-tools-and-integrations",
       "tags": [],
-      "stars": 2004,
-      "last_updated": "2026-07-22T15:29:13Z",
+      "stars": 2005,
+      "last_updated": "2026-07-30T11:46:48Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -658,7 +658,7 @@
       "description": "MySQL database integration in NodeJS with configurable access controls and schema inspection",
       "category": "databases",
       "tags": [],
-      "stars": 1994,
+      "stars": 1997,
       "last_updated": "2026-07-27T13:36:52Z",
       "source": "best-of-mcp-servers"
     },
@@ -668,8 +668,8 @@
       "description": "MCP server integration for DaVinci Resolve providing powerful tools for video editing, color grading, media management, and project control",
       "category": "art-and-culture",
       "tags": [],
-      "stars": 1919,
-      "last_updated": "2026-07-30T08:37:33Z",
+      "stars": 1932,
+      "last_updated": "2026-07-30T13:19:05Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -678,8 +678,8 @@
       "description": "powerful Kubernetes MCP server with additional support for OpenShift. Besides providing CRUD operations for **any** Kubernetes resource, this server provides specialized tools to interact with your cluster.",
       "category": "cloud-platforms",
       "tags": [],
-      "stars": 1864,
-      "last_updated": "2026-07-29T01:03:53Z",
+      "stars": 1869,
+      "last_updated": "2026-07-31T08:13:38Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -698,7 +698,7 @@
       "description": "The most powerful MCP server for Slack Workspaces.",
       "category": "communication",
       "tags": [],
-      "stars": 1760,
+      "stars": 1762,
       "last_updated": "2026-07-16T17:14:22Z",
       "source": "best-of-mcp-servers"
     },
@@ -708,7 +708,7 @@
       "description": "Query more than 40 apps with one binary using SQL. It can also connect to your PostgreSQL, MySQL, or SQLite compatible database. Local-first and private by design.",
       "category": "aggregators",
       "tags": [],
-      "stars": 1739,
+      "stars": 1740,
       "last_updated": "2026-07-11T11:20:19Z",
       "source": "best-of-mcp-servers"
     },
@@ -718,7 +718,7 @@
       "description": "Web search using free multi-engine search (NO API KEYS REQUIRED) — Supports Bing, Baidu, DuckDuckGo, Brave, Exa, and CSDN.",
       "category": "search-data-extraction",
       "tags": [],
-      "stars": 1658,
+      "stars": 1663,
       "last_updated": "2026-05-16T07:26:04Z",
       "source": "best-of-mcp-servers"
     },
@@ -728,7 +728,7 @@
       "description": "AI image generation & editing MCP server with 1,500+ curated prompt library, smart prompt enhancement, and multi-provider routing (local ComfyUI, MeiGen Cloud, OpenAI-compatible APIs).",
       "category": "art-and-culture",
       "tags": [],
-      "stars": 1630,
+      "stars": 1632,
       "last_updated": "2026-06-23T13:12:52Z",
       "source": "best-of-mcp-servers"
     },
@@ -738,8 +738,8 @@
       "description": "A JavaScript-driven M5Stack-embedded super-kawaii robot with MCP server functionality for AI-controlled interactions and emotions.",
       "category": "embedded-system",
       "tags": [],
-      "stars": 1621,
-      "last_updated": "2026-07-29T15:01:17Z",
+      "stars": 1625,
+      "last_updated": "2026-07-31T04:31:21Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -753,23 +753,23 @@
       "source": "best-of-mcp-servers"
     },
     {
-      "name": "isaacphi/mcp-language-server",
-      "url": "https://github.com/isaacphi/mcp-language-server",
-      "description": "MCP Language Server helps MCP enabled clients navigate codebases more easily by giving them access to semantic tools like get definition, references, rename, and diagnostics.",
-      "category": "developer-tools",
-      "tags": [],
-      "stars": 1572,
-      "last_updated": "2026-03-01T23:27:09Z",
-      "source": "best-of-mcp-servers"
-    },
-    {
       "name": "bitbonsai/mcpvault",
       "url": "https://github.com/bitbonsai/mcpvault",
       "description": "Universal AI bridge for Obsidian vaults using MCP. Provides safe read/write access to notes with 11 comprehensive methods for vault operations including search, batch operations, tag management, and frontmatter handling. Works with Claude, ChatGPT, and any MCP-compatible AI assistant.",
       "category": "knowledge-and-memory",
       "tags": [],
-      "stars": 1570,
-      "last_updated": "2026-07-27T12:05:28Z",
+      "stars": 1575,
+      "last_updated": "2026-07-30T12:44:16Z",
+      "source": "best-of-mcp-servers"
+    },
+    {
+      "name": "isaacphi/mcp-language-server",
+      "url": "https://github.com/isaacphi/mcp-language-server",
+      "description": "MCP Language Server helps MCP enabled clients navigate codebases more easily by giving them access to semantic tools like get definition, references, rename, and diagnostics.",
+      "category": "developer-tools",
+      "tags": [],
+      "stars": 1573,
+      "last_updated": "2026-03-01T23:27:09Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -798,8 +798,8 @@
       "description": "The official Terraform MCP Server seamlessly integrates with the Terraform ecosystem, enabling provider discovery, module analysis, and direct Registry API integration for advanced Infrastructure as Code workflows.",
       "category": "cloud-platforms",
       "tags": [],
-      "stars": 1484,
-      "last_updated": "2026-07-30T04:56:54Z",
+      "stars": 1489,
+      "last_updated": "2026-07-30T21:22:21Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -808,8 +808,8 @@
       "description": "A Qdrant MCP server",
       "category": "databases",
       "tags": [],
-      "stars": 1484,
-      "last_updated": "2026-07-24T00:13:53Z",
+      "stars": 1485,
+      "last_updated": "2026-07-31T00:14:00Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -818,7 +818,7 @@
       "description": "Web search using DuckDuckGo",
       "category": "search-data-extraction",
       "tags": [],
-      "stars": 1384,
+      "stars": 1386,
       "last_updated": "2026-07-28T14:23:09Z",
       "source": "best-of-mcp-servers"
     },
@@ -828,18 +828,8 @@
       "description": "The ROS MCP Server supports robot control by converting user-issued natural language commands into ROS or ROS2 control commands.",
       "category": "developer-tools",
       "tags": [],
-      "stars": 1368,
-      "last_updated": "2026-07-29T13:24:28Z",
-      "source": "best-of-mcp-servers"
-    },
-    {
-      "name": "designcomputer/mysql_mcp_server",
-      "url": "https://github.com/designcomputer/mysql_mcp_server",
-      "description": "MySQL database integration with configurable access controls, schema inspection, and comprehensive security guidelines",
-      "category": "databases",
-      "tags": [],
-      "stars": 1346,
-      "last_updated": "2026-06-20T15:25:08Z",
+      "stars": 1370,
+      "last_updated": "2026-07-30T10:12:59Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -848,8 +838,18 @@
       "description": "Telegram API integration for accessing user data, managing dialogs (chats, channels, groups), retrieving messages, sending messages and handling read status.",
       "category": "communication",
       "tags": [],
-      "stars": 1343,
-      "last_updated": "2026-07-28T11:21:40Z",
+      "stars": 1347,
+      "last_updated": "2026-07-30T10:36:40Z",
+      "source": "best-of-mcp-servers"
+    },
+    {
+      "name": "designcomputer/mysql_mcp_server",
+      "url": "https://github.com/designcomputer/mysql_mcp_server",
+      "description": "MySQL database integration with configurable access controls, schema inspection, and comprehensive security guidelines",
+      "category": "databases",
+      "tags": [],
+      "stars": 1345,
+      "last_updated": "2026-07-30T12:28:20Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -858,8 +858,8 @@
       "description": "Web search capabilities using Brave's Search API",
       "category": "search-data-extraction",
       "tags": [],
-      "stars": 1335,
-      "last_updated": "2026-07-28T06:40:47Z",
+      "stars": 1336,
+      "last_updated": "2026-07-30T16:08:44Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -888,7 +888,7 @@
       "description": "Wenyan MCP Server, which lets AI automatically format Markdown articles and publish them to WeChat GZH.",
       "category": "other-tools-and-integrations",
       "tags": [],
-      "stars": 1286,
+      "stars": 1288,
       "last_updated": "2026-04-29T07:27:30Z",
       "source": "best-of-mcp-servers"
     },
@@ -919,7 +919,7 @@
       "category": "data-science-tools",
       "tags": [],
       "stars": 1231,
-      "last_updated": "2026-07-29T16:23:56Z",
+      "last_updated": "2026-07-31T07:20:46Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -938,7 +938,7 @@
       "description": "Self-hosted MCP Server registry for enterprise AI Agents",
       "category": "aggregators",
       "tags": [],
-      "stars": 1178,
+      "stars": 1179,
       "last_updated": "2026-05-20T13:47:57Z",
       "source": "best-of-mcp-servers"
     },
@@ -948,8 +948,8 @@
       "description": "Meta Ads automation that just works. Trusted by 10,000+ businesses to analyze performance, test creatives, optimize spend, and scale results — simply and reliably.",
       "category": "marketing",
       "tags": [],
-      "stars": 1117,
-      "last_updated": "2026-07-29T03:53:08Z",
+      "stars": 1120,
+      "last_updated": "2026-07-30T17:23:18Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -958,8 +958,8 @@
       "description": "vet-mcp checks open source packages—like those suggested by AI coding tools—for vulnerabilities and malicious code. It supports npm and PyPI, and runs locally via Docker or as a standalone binary for fast, automated vetting.",
       "category": "security",
       "tags": [],
-      "stars": 1095,
-      "last_updated": "2026-07-30T07:53:50Z",
+      "stars": 1097,
+      "last_updated": "2026-07-30T16:43:52Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -968,8 +968,8 @@
       "description": "A Model Context Protocol Server for SearXNG",
       "category": "search-data-extraction",
       "tags": [],
-      "stars": 1087,
-      "last_updated": "2026-07-30T04:24:13Z",
+      "stars": 1089,
+      "last_updated": "2026-07-30T23:30:27Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -989,7 +989,7 @@
       "category": "cloud-platforms",
       "tags": [],
       "stars": 1064,
-      "last_updated": "2026-07-30T08:13:37Z",
+      "last_updated": "2026-07-31T05:47:51Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -998,8 +998,8 @@
       "description": "Built-in MCP server for ArcadeDB, a multi-model database (graph, document, key-value, time-series, vector) with SQL, Cypher, Gremlin, and MongoDB QL support.",
       "category": "databases",
       "tags": [],
-      "stars": 1053,
-      "last_updated": "2026-07-30T06:57:21Z",
+      "stars": 1056,
+      "last_updated": "2026-07-31T08:50:59Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -1008,7 +1008,7 @@
       "description": "connects QGIS Desktop to Claude AI through the MCP. This integration enables prompt-assisted project creation, layer loading, code execution, and more.",
       "category": "location-services",
       "tags": [],
-      "stars": 1044,
+      "stars": 1045,
       "last_updated": "2025-10-01T01:23:25Z",
       "source": "best-of-mcp-servers"
     },
@@ -1028,7 +1028,7 @@
       "description": "A Model Context Protocol server for interacting with Google Sheets. This server provides tools to create, read, update, and manage spreadsheets through the Google Sheets API.",
       "category": "databases",
       "tags": [],
-      "stars": 967,
+      "stars": 968,
       "last_updated": "2026-05-14T21:12:23Z",
       "source": "best-of-mcp-servers"
     },
@@ -1048,7 +1048,7 @@
       "description": "A Model Context Protocol (MCP) server for Kubernetes that enables AI assistants like Claude, Cursor, and others to interact with Kubernetes clusters through natural language.",
       "category": "cloud-platforms",
       "tags": [],
-      "stars": 936,
+      "stars": 940,
       "last_updated": "2026-04-08T22:37:48Z",
       "source": "best-of-mcp-servers"
     },
@@ -1059,7 +1059,7 @@
       "category": "other-tools-and-integrations",
       "tags": [],
       "stars": 918,
-      "last_updated": "2026-07-17T07:16:07Z",
+      "last_updated": "2026-07-31T07:14:56Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -1068,7 +1068,7 @@
       "description": "AI-powered developer assistant that enables advanced research, analysis and discovery across GitHub and NPM realms in realtime.",
       "category": "developer-tools",
       "tags": [],
-      "stars": 901,
+      "stars": 902,
       "last_updated": "2026-07-28T18:40:08Z",
       "source": "best-of-mcp-servers"
     },
@@ -1078,7 +1078,7 @@
       "description": "Connect any HTTP/REST API server using an Open API spec (v3)",
       "category": "developer-tools",
       "tags": [],
-      "stars": 899,
+      "stars": 900,
       "last_updated": "2026-07-07T15:21:11Z",
       "source": "best-of-mcp-servers"
     },
@@ -1088,8 +1088,8 @@
       "description": "MCP server that connects to Microsoft Office and the whole Microsoft 365 suite using Graph API (including Outlook, mail, files, Excel, calendar)",
       "category": "communication",
       "tags": [],
-      "stars": 885,
-      "last_updated": "2026-07-29T08:04:29Z",
+      "stars": 888,
+      "last_updated": "2026-07-30T10:54:55Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -1108,7 +1108,7 @@
       "description": "ClickHouse database integration with schema inspection and query capabilities",
       "category": "databases",
       "tags": [],
-      "stars": 836,
+      "stars": 838,
       "last_updated": "2026-07-23T14:18:12Z",
       "source": "best-of-mcp-servers"
     },
@@ -1149,7 +1149,7 @@
       "category": "monitoring",
       "tags": [],
       "stars": 801,
-      "last_updated": "2026-07-30T06:00:24Z",
+      "last_updated": "2026-07-31T00:22:17Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -1159,7 +1159,7 @@
       "category": "command-line",
       "tags": [],
       "stars": 790,
-      "last_updated": "2026-07-29T05:30:49Z",
+      "last_updated": "2026-07-31T06:56:55Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -1188,7 +1188,7 @@
       "description": "A reverse proxy and management layer for MCP servers, enabling scalable, session-aware routing and lifecycle management in Kubernetes environments.",
       "category": "aggregators",
       "tags": [],
-      "stars": 759,
+      "stars": 760,
       "last_updated": "2026-06-26T23:51:11Z",
       "source": "best-of-mcp-servers"
     },
@@ -1198,7 +1198,7 @@
       "description": "MCP Server for Integrating LINE Official Account",
       "category": "communication",
       "tags": [],
-      "stars": 734,
+      "stars": 739,
       "last_updated": "2026-07-30T06:31:03Z",
       "source": "best-of-mcp-servers"
     },
@@ -1218,8 +1218,8 @@
       "description": "MCP server for the Dingo: a comprehensive data quality evaluation tool. Server Enables interaction with Dingo's rule-based and LLM-based evaluation capabilities and rules&prompts listing.",
       "category": "data-science-tools",
       "tags": [],
-      "stars": 730,
-      "last_updated": "2026-07-29T03:23:22Z",
+      "stars": 731,
+      "last_updated": "2026-07-30T10:25:03Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -1228,7 +1228,7 @@
       "description": "A native Model Context Protocol server for Ghidra. Includes GUI configuration and logging, 31 powerful tools and no external dependencies.",
       "category": "security",
       "tags": [],
-      "stars": 686,
+      "stars": 687,
       "last_updated": "2026-07-12T22:02:48Z",
       "source": "best-of-mcp-servers"
     },
@@ -1248,7 +1248,7 @@
       "description": "Enable AI LLMs to execute trades using MetaTrader 5 platform",
       "category": "finance-and-fintech",
       "tags": [],
-      "stars": 673,
+      "stars": 678,
       "last_updated": "2026-03-28T18:39:29Z",
       "source": "best-of-mcp-servers"
     },
@@ -1258,7 +1258,7 @@
       "description": "Golang implementation for local file system access.",
       "category": "file-systems",
       "tags": [],
-      "stars": 670,
+      "stars": 671,
       "last_updated": "2025-11-24T15:46:55Z",
       "source": "best-of-mcp-servers"
     },
@@ -1268,7 +1268,7 @@
       "description": "The Semantic Engine for Model Context Protocol(MCP) Clients and AI Agents",
       "category": "databases",
       "tags": [],
-      "stars": 664,
+      "stars": 663,
       "last_updated": "2026-05-06T17:28:37Z",
       "source": "best-of-mcp-servers"
     },
@@ -1279,7 +1279,7 @@
       "category": "databases",
       "tags": [],
       "stars": 663,
-      "last_updated": "2026-07-29T22:34:14Z",
+      "last_updated": "2026-07-30T11:53:08Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -1298,7 +1298,7 @@
       "description": "A local MCP server that generates animations using Manim.",
       "category": "art-and-culture",
       "tags": [],
-      "stars": 622,
+      "stars": 624,
       "last_updated": "2025-05-19T17:12:31Z",
       "source": "best-of-mcp-servers"
     },
@@ -1319,7 +1319,7 @@
       "category": "databases",
       "tags": [],
       "stars": 620,
-      "last_updated": "2026-07-29T15:28:49Z",
+      "last_updated": "2026-07-31T05:26:58Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -1328,7 +1328,7 @@
       "description": "Generate mermaid diagram and chart with AI MCP dynamically.",
       "category": "customer-data-platforms",
       "tags": [],
-      "stars": 617,
+      "stars": 618,
       "last_updated": "2026-05-15T12:16:57Z",
       "source": "best-of-mcp-servers"
     },
@@ -1338,7 +1338,7 @@
       "description": "APKTool MCP Server is a MCP server for the Apk Tool to provide automation in reverse engineering of Android APKs.",
       "category": "security",
       "tags": [],
-      "stars": 613,
+      "stars": 614,
       "last_updated": "2026-07-02T14:20:56Z",
       "source": "best-of-mcp-servers"
     },
@@ -1348,7 +1348,7 @@
       "description": "A fully functional MCP server and CLI for YouTube to automate YouTube operation",
       "category": "browser-automation",
       "tags": [],
-      "stars": 601,
+      "stars": 602,
       "last_updated": "2026-07-26T02:06:55Z",
       "source": "best-of-mcp-servers"
     },
@@ -1359,7 +1359,7 @@
       "category": "data-platforms",
       "tags": [],
       "stars": 596,
-      "last_updated": "2026-07-28T18:53:55Z",
+      "last_updated": "2026-07-30T22:21:35Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -1378,7 +1378,7 @@
       "description": "Chroma MCP server to access local and cloud Chroma instances for retrieval capabilities",
       "category": "databases",
       "tags": [],
-      "stars": 580,
+      "stars": 581,
       "last_updated": "2025-09-17T20:20:13Z",
       "source": "best-of-mcp-servers"
     },
@@ -1388,7 +1388,7 @@
       "description": "Fetch YouTube subtitles and transcripts for AI analysis",
       "category": "browser-automation",
       "tags": [],
-      "stars": 576,
+      "stars": 578,
       "last_updated": "2026-07-21T03:28:48Z",
       "source": "best-of-mcp-servers"
     },
@@ -1428,7 +1428,7 @@
       "description": "MCP server exposing SSH control for Linux and Windows servers via Model Context Protocol. Securely execute remote shell commands with password or SSH key authentication.",
       "category": "command-line",
       "tags": [],
-      "stars": 562,
+      "stars": 566,
       "last_updated": "2026-01-03T19:21:40Z",
       "source": "best-of-mcp-servers"
     },
@@ -1438,8 +1438,8 @@
       "description": "Biomedical research MCP server providing access to PubMed, ClinicalTrials.gov, and MyVariant.info.",
       "category": "bio",
       "tags": [],
-      "stars": 558,
-      "last_updated": "2026-07-30T02:35:51Z",
+      "stars": 561,
+      "last_updated": "2026-07-30T22:50:34Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -1453,6 +1453,16 @@
       "source": "best-of-mcp-servers"
     },
     {
+      "name": "subnetmarco/pgmcp",
+      "url": "https://github.com/subnetmarco/pgmcp",
+      "description": "Natural language PostgreSQL queries with automatic streaming, read-only safety, and universal database compatibility.",
+      "category": "databases",
+      "tags": [],
+      "stars": 540,
+      "last_updated": "2026-05-26T18:24:45Z",
+      "source": "best-of-mcp-servers"
+    },
+    {
       "name": "centralmind/gateway",
       "url": "https://github.com/centralmind/gateway",
       "description": "MCP and MCP SSE Server that automatically generate API based on database schema and data. Supports PostgreSQL, Clickhouse, MySQL, Snowflake, BigQuery, Supabase",
@@ -1460,16 +1470,6 @@
       "tags": [],
       "stars": 539,
       "last_updated": "2025-07-18T16:15:36Z",
-      "source": "best-of-mcp-servers"
-    },
-    {
-      "name": "subnetmarco/pgmcp",
-      "url": "https://github.com/subnetmarco/pgmcp",
-      "description": "Natural language PostgreSQL queries with automatic streaming, read-only safety, and universal database compatibility.",
-      "category": "databases",
-      "tags": [],
-      "stars": 539,
-      "last_updated": "2026-05-26T18:24:45Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -1498,7 +1498,7 @@
       "description": "Query and analyze Prometheus, open-source monitoring system.",
       "category": "databases",
       "tags": [],
-      "stars": 509,
+      "stars": 510,
       "last_updated": "2026-07-23T09:07:54Z",
       "source": "best-of-mcp-servers"
     },
@@ -1538,8 +1538,8 @@
       "description": "Dead code detection, security scanning, and code quality analysis for Python, TypeScript, and Go. 98% recall with fewer false positives than Vulture. Includes AI-powered remediation.",
       "category": "security",
       "tags": [],
-      "stars": 481,
-      "last_updated": "2026-07-30T08:54:22Z",
+      "stars": 483,
+      "last_updated": "2026-07-30T16:08:44Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -1548,8 +1548,8 @@
       "description": "A unified Model Context Protocol server implementation that aggregates multiple MCP servers into one.",
       "category": "aggregators",
       "tags": [],
-      "stars": 479,
-      "last_updated": "2026-07-29T15:29:53Z",
+      "stars": 480,
+      "last_updated": "2026-07-30T15:31:36Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -1558,8 +1558,8 @@
       "description": "Deterministic execution engine for AI agents with 412 modules across 78 categories (browser, file, Docker, data, crypto, scheduling). Features execution trace, evidence snapshots, replay from any step, and supports both STDIO and Streamable HTTP transport.",
       "category": "developer-tools",
       "tags": [],
-      "stars": 476,
-      "last_updated": "2026-07-30T07:15:59Z",
+      "stars": 477,
+      "last_updated": "2026-07-31T06:47:29Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -1573,23 +1573,23 @@
       "source": "best-of-mcp-servers"
     },
     {
-      "name": "kagisearch/kagimcp",
-      "url": "https://github.com/kagisearch/kagimcp",
-      "description": "Official Kagi Search MCP Server",
-      "category": "search-data-extraction",
-      "tags": [],
-      "stars": 458,
-      "last_updated": "2026-07-07T15:26:36Z",
-      "source": "best-of-mcp-servers"
-    },
-    {
       "name": "r-huijts/strava-mcp",
       "url": "https://github.com/r-huijts/strava-mcp",
       "description": "A Model Context Protocol (MCP) server that connects to Strava API, providing tools to access Strava data through LLMs",
       "category": "sports",
       "tags": [],
-      "stars": 458,
+      "stars": 460,
       "last_updated": "2026-06-13T05:50:22Z",
+      "source": "best-of-mcp-servers"
+    },
+    {
+      "name": "kagisearch/kagimcp",
+      "url": "https://github.com/kagisearch/kagimcp",
+      "description": "Official Kagi Search MCP Server",
+      "category": "search-data-extraction",
+      "tags": [],
+      "stars": 459,
+      "last_updated": "2026-07-07T15:26:36Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -1648,7 +1648,7 @@
       "description": "A MCP server for the Discord integration. Enable your AI assistants to seamlessly interact with Discord. Enhance your Discord experience with powerful automation capabilities.",
       "category": "communication",
       "tags": [],
-      "stars": 423,
+      "stars": 424,
       "last_updated": "2026-04-25T13:55:22Z",
       "source": "best-of-mcp-servers"
     },
@@ -1718,7 +1718,7 @@
       "description": "Allows the AI to query GraphQL servers",
       "category": "other-tools-and-integrations",
       "tags": [],
-      "stars": 404,
+      "stars": 405,
       "last_updated": "2025-09-08T14:28:14Z",
       "source": "best-of-mcp-servers"
     },
@@ -1778,7 +1778,7 @@
       "description": "A MCP Server that allows AI such as Claude to read from the directory structure in a VS Code workspace, see problems picked up by linter(s) and the language server, read code files, and make edits.",
       "category": "coding-agents",
       "tags": [],
-      "stars": 382,
+      "stars": 383,
       "last_updated": "2026-01-07T15:40:49Z",
       "source": "best-of-mcp-servers"
     },
@@ -1818,7 +1818,7 @@
       "description": "An MCP server for Massive.com Financial Market Data",
       "category": "finance-and-fintech",
       "tags": [],
-      "stars": 373,
+      "stars": 374,
       "last_updated": "2026-06-11T16:25:26Z",
       "source": "best-of-mcp-servers"
     },
@@ -1833,23 +1833,23 @@
       "source": "best-of-mcp-servers"
     },
     {
+      "name": "diivi/aseprite-mcp",
+      "url": "https://github.com/diivi/aseprite-mcp",
+      "description": "MCP server using the Aseprite API to create pixel art",
+      "category": "art-and-culture",
+      "tags": [],
+      "stars": 369,
+      "last_updated": "2026-07-29T21:22:29Z",
+      "source": "best-of-mcp-servers"
+    },
+    {
       "name": "boltmcp/boltmcp",
       "url": "https://github.com/boltmcp/boltmcp",
       "description": "Enterprise-grade MCP orchestration platform to create, deploy, and manage custom MCP servers on-premises",
       "category": "aggregators",
       "tags": [],
       "stars": 363,
-      "last_updated": "2026-07-29T15:01:48Z",
-      "source": "best-of-mcp-servers"
-    },
-    {
-      "name": "diivi/aseprite-mcp",
-      "url": "https://github.com/diivi/aseprite-mcp",
-      "description": "MCP server using the Aseprite API to create pixel art",
-      "category": "art-and-culture",
-      "tags": [],
-      "stars": 363,
-      "last_updated": "2026-07-29T21:22:29Z",
+      "last_updated": "2026-07-30T16:09:24Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -1858,18 +1858,18 @@
       "description": "Privacy-first document search server running entirely locally. Supports semantic search over PDFs, DOCX, TXT, and Markdown files with LanceDB vector storage and local embeddings - no API keys or cloud services required.",
       "category": "knowledge-and-memory",
       "tags": [],
-      "stars": 357,
-      "last_updated": "2026-07-29T16:11:24Z",
+      "stars": 358,
+      "last_updated": "2026-07-31T07:34:05Z",
       "source": "best-of-mcp-servers"
     },
     {
-      "name": "base/base-mcp",
-      "url": "https://github.com/base/base-mcp",
-      "description": "Base Network integration for onchain tools, allowing interaction with Base Network and Coinbase API for wallet management, fund transfers, smart contracts, and DeFi operations",
-      "category": "finance-and-fintech",
+      "name": "ivnvxd/mcp-server-odoo",
+      "url": "https://github.com/ivnvxd/mcp-server-odoo",
+      "description": "Connect AI assistants to Odoo ERP systems for business data access, record management, and workflow automation.",
+      "category": "other-tools-and-integrations",
       "tags": [],
       "stars": 353,
-      "last_updated": "2026-05-13T20:07:50Z",
+      "last_updated": "2026-07-26T08:23:05Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -1883,13 +1883,13 @@
       "source": "best-of-mcp-servers"
     },
     {
-      "name": "ivnvxd/mcp-server-odoo",
-      "url": "https://github.com/ivnvxd/mcp-server-odoo",
-      "description": "Connect AI assistants to Odoo ERP systems for business data access, record management, and workflow automation.",
-      "category": "other-tools-and-integrations",
+      "name": "base/base-mcp",
+      "url": "https://github.com/base/base-mcp",
+      "description": "Base Network integration for onchain tools, allowing interaction with Base Network and Coinbase API for wallet management, fund transfers, smart contracts, and DeFi operations",
+      "category": "finance-and-fintech",
       "tags": [],
       "stars": 351,
-      "last_updated": "2026-07-26T08:23:05Z",
+      "last_updated": "2026-05-13T20:07:50Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -1918,7 +1918,7 @@
       "description": "An MCP server that integrates with Xero's API, allowing for standardized access to Xero's accounting and business features.",
       "category": "finance-and-fintech",
       "tags": [],
-      "stars": 343,
+      "stars": 344,
       "last_updated": "2026-06-05T06:52:56Z",
       "source": "best-of-mcp-servers"
     },
@@ -1938,7 +1938,7 @@
       "description": "Telegram API integration for accessing user data, managing dialogs (chats, channels, groups), retrieving messages, and handling read status",
       "category": "communication",
       "tags": [],
-      "stars": 339,
+      "stars": 340,
       "last_updated": "2026-05-28T17:44:53Z",
       "source": "best-of-mcp-servers"
     },
@@ -1968,7 +1968,7 @@
       "description": "An MCP server that securely interfaces with your iMessage database via the Model Context Protocol (MCP), allowing LLMs to query and analyze iMessage conversations. It includes robust phone number validation, attachment processing, contact management, group chat handling, and full support for sending and receiving messages.",
       "category": "communication",
       "tags": [],
-      "stars": 310,
+      "stars": 311,
       "last_updated": "2026-07-21T01:23:40Z",
       "source": "best-of-mcp-servers"
     },
@@ -1978,7 +1978,7 @@
       "description": "An MCP server paired with a browser extension that enables LLM clients to control the user's browser (Firefox).",
       "category": "browser-automation",
       "tags": [],
-      "stars": 308,
+      "stars": 309,
       "last_updated": "2026-07-24T10:07:09Z",
       "source": "best-of-mcp-servers"
     },
@@ -2023,6 +2023,16 @@
       "source": "best-of-mcp-servers"
     },
     {
+      "name": "hechtcarmel/jetbrains-index-mcp-plugin",
+      "url": "https://github.com/hechtcarmel/jetbrains-index-mcp-plugin",
+      "description": "A JetBrains IDE plugin that exposes an MCP server, enabling AI coding assistants to leverage the IDE's indexing and refactoring capabilities (rename, safe delete, find references, call hierarchy, type hierarchy, diagnostics and more).",
+      "category": "developer-tools",
+      "tags": [],
+      "stars": 299,
+      "last_updated": "2026-07-31T08:51:04Z",
+      "source": "best-of-mcp-servers"
+    },
+    {
       "name": "VikashLoomba/MCP-Server-Playwright",
       "url": "https://github.com/VikashLoomba/MCP-Server-Playwright",
       "description": "A Model Context Protocol server that provides browser automation capabilities using Playwright",
@@ -2040,16 +2050,6 @@
       "tags": [],
       "stars": 298,
       "last_updated": "2026-05-10T23:41:16Z",
-      "source": "best-of-mcp-servers"
-    },
-    {
-      "name": "hechtcarmel/jetbrains-index-mcp-plugin",
-      "url": "https://github.com/hechtcarmel/jetbrains-index-mcp-plugin",
-      "description": "A JetBrains IDE plugin that exposes an MCP server, enabling AI coding assistants to leverage the IDE's indexing and refactoring capabilities (rename, safe delete, find references, call hierarchy, type hierarchy, diagnostics and more).",
-      "category": "developer-tools",
-      "tags": [],
-      "stars": 296,
-      "last_updated": "2026-07-30T07:51:18Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -2079,7 +2079,7 @@
       "category": "developer-tools",
       "tags": [],
       "stars": 293,
-      "last_updated": "2026-07-29T15:36:34Z",
+      "last_updated": "2026-07-30T19:58:12Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -2088,7 +2088,7 @@
       "description": "Provides up-to-date documentation context for a specific Rust crate to LLMs via an MCP tool, using semantic search (embeddings) and LLM summarization.",
       "category": "developer-tools",
       "tags": [],
-      "stars": 288,
+      "stars": 289,
       "last_updated": "2025-11-24T19:44:06Z",
       "source": "best-of-mcp-servers"
     },
@@ -2109,7 +2109,7 @@
       "category": "developer-tools",
       "tags": [],
       "stars": 283,
-      "last_updated": "2026-07-30T01:40:34Z",
+      "last_updated": "2026-07-31T08:40:52Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -2133,23 +2133,23 @@
       "source": "best-of-mcp-servers"
     },
     {
+      "name": "jinzcdev/markmap-mcp-server",
+      "url": "https://github.com/jinzcdev/markmap-mcp-server",
+      "description": "An MCP server built on markmap that converts Markdown to interactive mind maps. Supports multi-format exports (PNG/JPG/SVG), live browser preview, one-click Markdown copy, and dynamic visualization features.",
+      "category": "knowledge-and-memory",
+      "tags": [],
+      "stars": 275,
+      "last_updated": "2026-03-18T07:55:48Z",
+      "source": "best-of-mcp-servers"
+    },
+    {
       "name": "public-ui/kolibri",
       "url": "https://github.com/public-ui/kolibri",
       "description": "Streaming KoliBri MCP server (NPM: @public-ui/mcp) delivering 200+ guaranteed accessible web component samples, specs, docs, and scenarios via hosted HTTP endpoint or local kolibri-mcp CLI.",
       "category": "developer-tools",
       "tags": [],
       "stars": 274,
-      "last_updated": "2026-07-30T08:47:00Z",
-      "source": "best-of-mcp-servers"
-    },
-    {
-      "name": "jinzcdev/markmap-mcp-server",
-      "url": "https://github.com/jinzcdev/markmap-mcp-server",
-      "description": "An MCP server built on markmap that converts Markdown to interactive mind maps. Supports multi-format exports (PNG/JPG/SVG), live browser preview, one-click Markdown copy, and dynamic visualization features.",
-      "category": "knowledge-and-memory",
-      "tags": [],
-      "stars": 274,
-      "last_updated": "2026-03-18T07:55:48Z",
+      "last_updated": "2026-07-31T09:15:38Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -2209,7 +2209,7 @@
       "category": "developer-tools",
       "tags": [],
       "stars": 264,
-      "last_updated": "2026-07-30T07:14:51Z",
+      "last_updated": "2026-07-31T09:15:54Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -2228,7 +2228,7 @@
       "description": "Generate visual charts using Apache ECharts with AI MCP dynamically.",
       "category": "customer-data-platforms",
       "tags": [],
-      "stars": 255,
+      "stars": 256,
       "last_updated": "2026-01-30T15:36:37Z",
       "source": "best-of-mcp-servers"
     },
@@ -2283,6 +2283,16 @@
       "source": "best-of-mcp-servers"
     },
     {
+      "name": "the-momentum/apple-health-mcp-server",
+      "url": "https://github.com/the-momentum/apple-health-mcp-server",
+      "description": "An MCP server that provides access to exported data from Apple Health. Data analytics included.",
+      "category": "bio",
+      "tags": [],
+      "stars": 241,
+      "last_updated": "2026-07-09T10:57:10Z",
+      "source": "best-of-mcp-servers"
+    },
+    {
       "name": "XGenerationLab/xiyan_mcp_server",
       "url": "https://github.com/XGenerationLab/xiyan_mcp_server",
       "description": "An MCP server that supports fetching data from a database using natural language queries, powered by XiyanSQL as the text-to-SQL LLM.",
@@ -2303,23 +2313,13 @@
       "source": "best-of-mcp-servers"
     },
     {
-      "name": "the-momentum/apple-health-mcp-server",
-      "url": "https://github.com/the-momentum/apple-health-mcp-server",
-      "description": "An MCP server that provides access to exported data from Apple Health. Data analytics included.",
-      "category": "bio",
-      "tags": [],
-      "stars": 238,
-      "last_updated": "2026-07-09T10:57:10Z",
-      "source": "best-of-mcp-servers"
-    },
-    {
       "name": "varun29ankuS/shodh-memory",
       "url": "https://github.com/varun29ankuS/shodh-memory",
       "description": "Cognitive memory for AI agents with Hebbian learning, 3-tier architecture, and knowledge graphs. Single ~15MB binary, runs offline on edge devices.",
       "category": "knowledge-and-memory",
       "tags": [],
       "stars": 238,
-      "last_updated": "2026-07-30T08:25:37Z",
+      "last_updated": "2026-07-31T09:03:16Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -2378,7 +2378,7 @@
       "description": "A Rust-based MCP server bridging Wazuh SIEM with AI assistants, providing real-time security alerts and event data for enhanced contextual understanding.",
       "category": "security",
       "tags": [],
-      "stars": 228,
+      "stars": 229,
       "last_updated": "2025-12-12T03:06:04Z",
       "source": "best-of-mcp-servers"
     },
@@ -2399,7 +2399,17 @@
       "category": "developer-tools",
       "tags": [],
       "stars": 215,
-      "last_updated": "2026-07-30T00:54:46Z",
+      "last_updated": "2026-07-30T19:02:10Z",
+      "source": "best-of-mcp-servers"
+    },
+    {
+      "name": "jagan-shanmugam/open-streetmap-mcp",
+      "url": "https://github.com/jagan-shanmugam/open-streetmap-mcp",
+      "description": "An OpenStreetMap MCP server with location-based services and geospatial data.",
+      "category": "location-services",
+      "tags": [],
+      "stars": 214,
+      "last_updated": "2025-07-12T21:55:20Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -2413,13 +2423,13 @@
       "source": "best-of-mcp-servers"
     },
     {
-      "name": "jagan-shanmugam/open-streetmap-mcp",
-      "url": "https://github.com/jagan-shanmugam/open-streetmap-mcp",
-      "description": "An OpenStreetMap MCP server with location-based services and geospatial data.",
-      "category": "location-services",
+      "name": "portainer/portainer-mcp",
+      "url": "https://github.com/portainer/portainer-mcp",
+      "description": "A powerful MCP server that enables AI assistants to seamlessly interact with Portainer instances, providing natural language access to container management, deployment operations, and infrastructure monitoring capabilities.",
+      "category": "cloud-platforms",
       "tags": [],
-      "stars": 213,
-      "last_updated": "2025-07-12T21:55:20Z",
+      "stars": 208,
+      "last_updated": "2026-07-30T22:57:36Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -2430,16 +2440,6 @@
       "tags": [],
       "stars": 208,
       "last_updated": "2026-05-19T20:20:12Z",
-      "source": "best-of-mcp-servers"
-    },
-    {
-      "name": "portainer/portainer-mcp",
-      "url": "https://github.com/portainer/portainer-mcp",
-      "description": "A powerful MCP server that enables AI assistants to seamlessly interact with Portainer instances, providing natural language access to container management, deployment operations, and infrastructure monitoring capabilities.",
-      "category": "cloud-platforms",
-      "tags": [],
-      "stars": 207,
-      "last_updated": "2026-07-30T05:59:38Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -2523,6 +2523,16 @@
       "source": "best-of-mcp-servers"
     },
     {
+      "name": "HagaiHen/facebook-mcp-server",
+      "url": "https://github.com/HagaiHen/facebook-mcp-server",
+      "description": "Integrates with Facebook Pages to enable direct management of posts, comments, and engagement metrics through the Graph API for streamlined social media management.",
+      "category": "social-media",
+      "tags": [],
+      "stars": 198,
+      "last_updated": "2026-04-23T19:08:42Z",
+      "source": "best-of-mcp-servers"
+    },
+    {
       "name": "deadletterq/mcp-opennutrition",
       "url": "https://github.com/deadletterq/mcp-opennutrition",
       "description": "Local MCP server for searching 300,000+ foods, nutrition facts, and barcodes from the OpenNutrition database.",
@@ -2533,23 +2543,13 @@
       "source": "best-of-mcp-servers"
     },
     {
-      "name": "HagaiHen/facebook-mcp-server",
-      "url": "https://github.com/HagaiHen/facebook-mcp-server",
-      "description": "Integrates with Facebook Pages to enable direct management of posts, comments, and engagement metrics through the Graph API for streamlined social media management.",
-      "category": "social-media",
-      "tags": [],
-      "stars": 197,
-      "last_updated": "2026-04-23T19:08:42Z",
-      "source": "best-of-mcp-servers"
-    },
-    {
       "name": "stape-io/google-tag-manager-mcp-server",
       "url": "https://github.com/stape-io/google-tag-manager-mcp-server",
       "description": "This server supports remote MCP connections, includes built-in Google OAuth, and provide an interface to the Google Tag Manager API.",
       "category": "marketing",
       "tags": [],
-      "stars": 195,
-      "last_updated": "2026-07-29T09:35:00Z",
+      "stars": 196,
+      "last_updated": "2026-07-31T01:10:21Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -2578,7 +2578,7 @@
       "description": "An MCP server (and command-line tool) to provide a dynamic map of chat-related files from the repository with their function prototypes and related files in order of relevance. Based on the \"Repo Map\" functionality in Aider.chat",
       "category": "coding-agents",
       "tags": [],
-      "stars": 188,
+      "stars": 189,
       "last_updated": "2025-12-08T14:26:13Z",
       "source": "best-of-mcp-servers"
     },
@@ -2618,7 +2618,7 @@
       "description": "Interact with TikTok videos",
       "category": "other-tools-and-integrations",
       "tags": [],
-      "stars": 183,
+      "stars": 184,
       "last_updated": "2026-02-27T20:05:47Z",
       "source": "best-of-mcp-servers"
     },
@@ -2658,7 +2658,7 @@
       "description": "MCP to interface with multiple blockchains, staking, DeFi, swap, bridging, wallet management, DCA, Limit Orders, Coin Lookup, Tracking and more.",
       "category": "finance-and-fintech",
       "tags": [],
-      "stars": 181,
+      "stars": 178,
       "last_updated": "2025-07-29T15:53:53Z",
       "source": "best-of-mcp-servers"
     },
@@ -2679,7 +2679,7 @@
       "category": "coding-agents",
       "tags": [],
       "stars": 176,
-      "last_updated": "2026-07-27T15:12:01Z",
+      "last_updated": "2026-07-30T20:42:01Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -2719,7 +2719,7 @@
       "category": "location-services",
       "tags": [],
       "stars": 174,
-      "last_updated": "2025-12-21T11:05:18Z",
+      "last_updated": "2026-07-31T08:27:08Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -2729,7 +2729,7 @@
       "category": "search-data-extraction",
       "tags": [],
       "stars": 174,
-      "last_updated": "2026-07-27T10:26:17Z",
+      "last_updated": "2026-07-30T15:50:34Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -2739,7 +2739,7 @@
       "category": "finance-and-fintech",
       "tags": [],
       "stars": 173,
-      "last_updated": "2026-07-26T14:51:48Z",
+      "last_updated": "2026-07-30T17:29:58Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -2769,7 +2769,7 @@
       "category": "search-data-extraction",
       "tags": [],
       "stars": 172,
-      "last_updated": "2026-07-29T04:32:10Z",
+      "last_updated": "2026-07-30T23:11:48Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -2818,7 +2818,7 @@
       "description": "Node.js-based MySQL database integration that provides secure MySQL database operations",
       "category": "databases",
       "tags": [],
-      "stars": 167,
+      "stars": 168,
       "last_updated": "2025-11-14T08:30:28Z",
       "source": "best-of-mcp-servers"
     },
@@ -2829,7 +2829,7 @@
       "category": "search-data-extraction",
       "tags": [],
       "stars": 167,
-      "last_updated": "2026-07-30T02:24:34Z",
+      "last_updated": "2026-07-30T11:02:01Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -2838,7 +2838,7 @@
       "description": "The Scrapeless Model Context Protocol service acts as an MCP server connector to the Google SERP API, enabling web search within the MCP ecosystem without leaving it.",
       "category": "search-data-extraction",
       "tags": [],
-      "stars": 166,
+      "stars": 167,
       "last_updated": "2025-09-23T09:37:24Z",
       "source": "best-of-mcp-servers"
     },
@@ -2903,16 +2903,6 @@
       "source": "best-of-mcp-servers"
     },
     {
-      "name": "aaronjmars/web3-research-mcp",
-      "url": "https://github.com/aaronjmars/web3-research-mcp",
-      "description": "Deep Research for crypto - free & fully local",
-      "category": "finance-and-fintech",
-      "tags": [],
-      "stars": 161,
-      "last_updated": "2026-07-30T03:24:15Z",
-      "source": "best-of-mcp-servers"
-    },
-    {
       "name": "entanglr/zettelkasten-mcp",
       "url": "https://github.com/entanglr/zettelkasten-mcp",
       "description": "A Model Context Protocol (MCP) server that implements the Zettelkasten knowledge management methodology, allowing you to create, link, and search atomic notes through Claude and other MCP-compatible clients.",
@@ -2939,7 +2929,17 @@
       "category": "developer-tools",
       "tags": [],
       "stars": 160,
-      "last_updated": "2026-07-29T09:52:56Z",
+      "last_updated": "2026-07-30T09:32:36Z",
+      "source": "best-of-mcp-servers"
+    },
+    {
+      "name": "aaronjmars/web3-research-mcp",
+      "url": "https://github.com/aaronjmars/web3-research-mcp",
+      "description": "Deep Research for crypto - free & fully local",
+      "category": "finance-and-fintech",
+      "tags": [],
+      "stars": 159,
+      "last_updated": "2026-07-30T13:22:10Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -2978,8 +2978,18 @@
       "description": "A Node.js MCP server that spins up isolated Docker-based sandboxes for executing JavaScript snippets with on-the-fly npm dependency installation and clean teardown",
       "category": "code-execution",
       "tags": [],
-      "stars": 155,
+      "stars": 156,
       "last_updated": "2025-11-24T20:00:40Z",
+      "source": "best-of-mcp-servers"
+    },
+    {
+      "name": "zcaceres/gtasks-mcp",
+      "url": "https://github.com/zcaceres/gtasks-mcp",
+      "description": "An MCP server to Manage Google Tasks",
+      "category": "communication",
+      "tags": [],
+      "stars": 155,
+      "last_updated": "2026-06-08T09:48:39Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -3000,16 +3010,6 @@
       "tags": [],
       "stars": 155,
       "last_updated": "2025-05-01T02:39:27Z",
-      "source": "best-of-mcp-servers"
-    },
-    {
-      "name": "zcaceres/gtasks-mcp",
-      "url": "https://github.com/zcaceres/gtasks-mcp",
-      "description": "An MCP server to Manage Google Tasks",
-      "category": "communication",
-      "tags": [],
-      "stars": 154,
-      "last_updated": "2026-06-08T09:48:39Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -3083,16 +3083,6 @@
       "source": "best-of-mcp-servers"
     },
     {
-      "name": "OctagonAI/octagon-mcp-server",
-      "url": "https://github.com/OctagonAI/octagon-mcp-server",
-      "description": "Octagon AI Agents to integrate private and public market data",
-      "category": "finance-and-fintech",
-      "tags": [],
-      "stars": 145,
-      "last_updated": "2026-07-09T19:52:51Z",
-      "source": "best-of-mcp-servers"
-    },
-    {
       "name": "roychri/mcp-server-asana",
       "url": "https://github.com/roychri/mcp-server-asana",
       "description": "This Model Context Protocol server implementation of Asana allows you to talk to Asana API from MCP Client such as Anthropic's Claude Desktop Application, and many more.",
@@ -3100,6 +3090,16 @@
       "tags": [],
       "stars": 145,
       "last_updated": "2026-05-10T14:47:21Z",
+      "source": "best-of-mcp-servers"
+    },
+    {
+      "name": "OctagonAI/octagon-mcp-server",
+      "url": "https://github.com/OctagonAI/octagon-mcp-server",
+      "description": "Octagon AI Agents to integrate private and public market data",
+      "category": "finance-and-fintech",
+      "tags": [],
+      "stars": 144,
+      "last_updated": "2026-07-09T19:52:51Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -3119,7 +3119,7 @@
       "category": "search-data-extraction",
       "tags": [],
       "stars": 142,
-      "last_updated": "2026-07-17T20:43:53Z",
+      "last_updated": "2026-07-30T21:32:45Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -3178,7 +3178,7 @@
       "description": "MCP server enabling automated access to LeetCode's programming problems, solutions, submissions and public data with optional authentication for user-specific features (e.g., notes), supporting both leetcode.com (global) and leetcode.cn (China) sites.",
       "category": "coding-agents",
       "tags": [],
-      "stars": 135,
+      "stars": 136,
       "last_updated": "2026-07-12T12:05:31Z",
       "source": "best-of-mcp-servers"
     },
@@ -3196,6 +3196,16 @@
       "stars": 135,
       "last_updated": "2026-07-08T15:57:40Z",
       "source": "supplemental"
+    },
+    {
+      "name": "nkapila6/mcp-local-rag",
+      "url": "https://github.com/nkapila6/mcp-local-rag",
+      "description": "primitive\" RAG-like web search model context protocol (MCP) server that runs locally. No APIs needed.",
+      "category": "search-data-extraction",
+      "tags": [],
+      "stars": 133,
+      "last_updated": "2026-07-27T01:24:27Z",
+      "source": "best-of-mcp-servers"
     },
     {
       "name": "13bm/GhidraMCP",
@@ -3228,16 +3238,6 @@
       "source": "best-of-mcp-servers"
     },
     {
-      "name": "nkapila6/mcp-local-rag",
-      "url": "https://github.com/nkapila6/mcp-local-rag",
-      "description": "primitive\" RAG-like web search model context protocol (MCP) server that runs locally. No APIs needed.",
-      "category": "search-data-extraction",
-      "tags": [],
-      "stars": 132,
-      "last_updated": "2026-07-27T01:24:27Z",
-      "source": "best-of-mcp-servers"
-    },
-    {
       "name": "wso2/fhir-mcp-server",
       "url": "https://github.com/wso2/fhir-mcp-server",
       "description": "Model Context Protocol server for Fast Healthcare Interoperability Resources (FHIR) APIs. Provides seamless integration with FHIR servers, enabling AI assistants to search, retrieve, create, update, and analyze clinical healthcare data with SMART-on-FHIR authentication support.",
@@ -3264,7 +3264,7 @@
       "category": "other-tools-and-integrations",
       "tags": [],
       "stars": 129,
-      "last_updated": "2026-07-28T14:16:26Z",
+      "last_updated": "2026-07-31T08:46:45Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -3278,16 +3278,6 @@
       "source": "best-of-mcp-servers"
     },
     {
-      "name": "kukapay/freqtrade-mcp",
-      "url": "https://github.com/kukapay/freqtrade-mcp",
-      "description": "An MCP server that integrates with the Freqtrade cryptocurrency trading bot.",
-      "category": "finance-and-fintech",
-      "tags": [],
-      "stars": 127,
-      "last_updated": "2025-12-06T01:04:13Z",
-      "source": "best-of-mcp-servers"
-    },
-    {
       "name": "augmnt/augments-mcp-server",
       "url": "https://github.com/augmnt/augments-mcp-server",
       "description": "Transform Claude Code with intelligent, real-time access to 90+ framework documentation sources. Get accurate, up-to-date code generation that follows current best practices for React, Next.js, Laravel, FastAPI, Tailwind CSS, and more.",
@@ -3298,13 +3288,23 @@
       "source": "best-of-mcp-servers"
     },
     {
+      "name": "kukapay/freqtrade-mcp",
+      "url": "https://github.com/kukapay/freqtrade-mcp",
+      "description": "An MCP server that integrates with the Freqtrade cryptocurrency trading bot.",
+      "category": "finance-and-fintech",
+      "tags": [],
+      "stars": 126,
+      "last_updated": "2025-12-06T01:04:13Z",
+      "source": "best-of-mcp-servers"
+    },
+    {
       "name": "kubestellar/console",
       "url": "https://github.com/kubestellar/console",
       "description": "Multi-cluster Kubernetes dashboard with built-in MCP server (kc-agent) for AI-assisted operations, real-time observability, and integrations with 20+ CNCF projects across edge and cloud clusters.",
       "category": "cloud-platforms",
       "tags": [],
       "stars": 125,
-      "last_updated": "2026-07-30T09:03:00Z",
+      "last_updated": "2026-07-31T07:18:16Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -3404,7 +3404,7 @@
       "category": "aggregators",
       "tags": [],
       "stars": 116,
-      "last_updated": "2026-07-29T19:50:23Z",
+      "last_updated": "2026-07-31T08:51:12Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -3438,6 +3438,16 @@
       "source": "best-of-mcp-servers"
     },
     {
+      "name": "SureScaleAI/openai-gpt-image-mcp",
+      "url": "https://github.com/SureScaleAI/openai-gpt-image-mcp",
+      "description": "OpenAI GPT image generation/editing MCP server.",
+      "category": "aggregators",
+      "tags": [],
+      "stars": 107,
+      "last_updated": "2025-05-31T21:07:31Z",
+      "source": "best-of-mcp-servers"
+    },
+    {
       "name": "hannesrudolph/sqlite-explorer-fastmcp-mcp-server",
       "url": "https://github.com/hannesrudolph/sqlite-explorer-fastmcp-mcp-server",
       "description": "An MCP server that provides safe, read-only access to SQLite databases through Model Context Protocol (MCP). This server is built with the FastMCP framework, which enables LLMs to explore and query SQLite databases with built-in safety features and query validation.",
@@ -3455,16 +3465,6 @@
       "tags": [],
       "stars": 107,
       "last_updated": "2026-03-07T07:21:01Z",
-      "source": "best-of-mcp-servers"
-    },
-    {
-      "name": "SureScaleAI/openai-gpt-image-mcp",
-      "url": "https://github.com/SureScaleAI/openai-gpt-image-mcp",
-      "description": "OpenAI GPT image generation/editing MCP server.",
-      "category": "aggregators",
-      "tags": [],
-      "stars": 105,
-      "last_updated": "2025-05-31T21:07:31Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -3538,6 +3538,16 @@
       "source": "best-of-mcp-servers"
     },
     {
+      "name": "opgginc/opgg-mcp",
+      "url": "https://github.com/opgginc/opgg-mcp",
+      "description": "Access real-time gaming data across popular titles like League of Legends, TFT, and Valorant, offering champion analytics, esports schedules, meta compositions, and character statistics.",
+      "category": "gaming",
+      "tags": [],
+      "stars": 98,
+      "last_updated": "2026-07-15T18:38:04Z",
+      "source": "best-of-mcp-servers"
+    },
+    {
       "name": "thingsboard/thingsboard-mcp",
       "url": "https://github.com/thingsboard/thingsboard-mcp",
       "description": "The ThingsBoard MCP Server provides a natural language interface for LLMs and AI agents to interact with your ThingsBoard IoT platform.",
@@ -3545,16 +3555,6 @@
       "tags": [],
       "stars": 98,
       "last_updated": "2026-03-16T13:43:46Z",
-      "source": "best-of-mcp-servers"
-    },
-    {
-      "name": "opgginc/opgg-mcp",
-      "url": "https://github.com/opgginc/opgg-mcp",
-      "description": "Access real-time gaming data across popular titles like League of Legends, TFT, and Valorant, offering champion analytics, esports schedules, meta compositions, and character statistics.",
-      "category": "gaming",
-      "tags": [],
-      "stars": 97,
-      "last_updated": "2026-07-15T18:38:04Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -3575,16 +3575,6 @@
       "tags": [],
       "stars": 95,
       "last_updated": "2026-04-18T10:47:29Z",
-      "source": "best-of-mcp-servers"
-    },
-    {
-      "name": "areweai/tsgram-mcp",
-      "url": "https://github.com/areweai/tsgram-mcp",
-      "description": "TSgram: Telegram + Claude with local workspace access on your phone in typescript. Read, write, and vibe code on the go!",
-      "category": "communication",
-      "tags": [],
-      "stars": 94,
-      "last_updated": "2025-06-26T04:55:26Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -3638,6 +3628,16 @@
       "source": "best-of-mcp-servers"
     },
     {
+      "name": "areweai/tsgram-mcp",
+      "url": "https://github.com/areweai/tsgram-mcp",
+      "description": "TSgram: Telegram + Claude with local workspace access on your phone in typescript. Read, write, and vibe code on the go!",
+      "category": "communication",
+      "tags": [],
+      "stars": 92,
+      "last_updated": "2025-06-26T04:55:26Z",
+      "source": "best-of-mcp-servers"
+    },
+    {
       "name": "abrinsmead/mindpilot-mcp",
       "url": "https://github.com/abrinsmead/mindpilot-mcp",
       "description": "Visualizes code, architecture and other concepts as mermaid diagrams in a locally hosted web app. Just ask your agent to \"show me this in a diagram\".",
@@ -3645,6 +3645,16 @@
       "tags": [],
       "stars": 90,
       "last_updated": "2026-07-05T06:04:54Z",
+      "source": "best-of-mcp-servers"
+    },
+    {
+      "name": "seekrays/mcp-monitor",
+      "url": "https://github.com/seekrays/mcp-monitor",
+      "description": "A system monitoring tool that exposes system metrics via the Model Context Protocol (MCP). This tool allows LLMs to retrieve real-time system information through an MCP-compatible interface.（support CPU、Memory、Disk、Network、Host、Process）",
+      "category": "monitoring",
+      "tags": [],
+      "stars": 90,
+      "last_updated": "2025-08-02T15:13:23Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -3668,16 +3678,6 @@
       "source": "best-of-mcp-servers"
     },
     {
-      "name": "seekrays/mcp-monitor",
-      "url": "https://github.com/seekrays/mcp-monitor",
-      "description": "A system monitoring tool that exposes system metrics via the Model Context Protocol (MCP). This tool allows LLMs to retrieve real-time system information through an MCP-compatible interface.（support CPU、Memory、Disk、Network、Host、Process）",
-      "category": "monitoring",
-      "tags": [],
-      "stars": 89,
-      "last_updated": "2025-08-02T15:13:23Z",
-      "source": "best-of-mcp-servers"
-    },
-    {
       "name": "micl2e2/code-to-tree",
       "url": "https://github.com/micl2e2/code-to-tree",
       "description": "A single-binary MCP server that converts source code into AST, regardless of language.",
@@ -3685,6 +3685,16 @@
       "tags": [],
       "stars": 88,
       "last_updated": "2026-03-14T02:22:44Z",
+      "source": "best-of-mcp-servers"
+    },
+    {
+      "name": "wenb1n-dev/SmartDB_MCP",
+      "url": "https://github.com/wenb1n-dev/SmartDB_MCP",
+      "description": "A universal database MCP server supporting simultaneous connections to multiple databases. It provides tools for database operations, health analysis, SQL optimization, and more. Compatible with mainstream databases including MySQL, PostgreSQL, SQL Server, MariaDB, Dameng, and Oracle. Supports Streamable HTTP, SSE, and STDIO; integrates OAuth 2.0; and is designed for easy customization and extension by developers.",
+      "category": "databases",
+      "tags": [],
+      "stars": 88,
+      "last_updated": "2025-09-14T04:37:20Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -3705,16 +3715,6 @@
       "tags": [],
       "stars": 87,
       "last_updated": "2026-02-20T18:34:00Z",
-      "source": "best-of-mcp-servers"
-    },
-    {
-      "name": "wenb1n-dev/SmartDB_MCP",
-      "url": "https://github.com/wenb1n-dev/SmartDB_MCP",
-      "description": "A universal database MCP server supporting simultaneous connections to multiple databases. It provides tools for database operations, health analysis, SQL optimization, and more. Compatible with mainstream databases including MySQL, PostgreSQL, SQL Server, MariaDB, Dameng, and Oracle. Supports Streamable HTTP, SSE, and STDIO; integrates OAuth 2.0; and is designed for easy customization and extension by developers.",
-      "category": "databases",
-      "tags": [],
-      "stars": 87,
-      "last_updated": "2025-09-14T04:37:20Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -3784,7 +3784,7 @@
       "category": "data-platforms",
       "tags": [],
       "stars": 84,
-      "last_updated": "2026-07-30T09:03:09Z",
+      "last_updated": "2026-07-31T09:06:35Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -3858,6 +3858,16 @@
       "source": "best-of-mcp-servers"
     },
     {
+      "name": "zillow/auto-mobile",
+      "url": "https://github.com/zillow/auto-mobile",
+      "description": "Tool suite built around an MCP server for Android automation for developer workflow and testing",
+      "category": "developer-tools",
+      "tags": [],
+      "stars": 80,
+      "last_updated": "2026-03-10T00:38:11Z",
+      "source": "best-of-mcp-servers"
+    },
+    {
       "name": "hannesrudolph/imessage-query-fastmcp-mcp-server",
       "url": "https://github.com/hannesrudolph/imessage-query-fastmcp-mcp-server",
       "description": "An MCP server that provides safe access to your iMessage database through Model Context Protocol (MCP), enabling LLMs to query and analyze iMessage conversations with proper phone number validation and attachment handling",
@@ -3875,16 +3885,6 @@
       "tags": [],
       "stars": 79,
       "last_updated": "2025-09-01T09:00:40Z",
-      "source": "best-of-mcp-servers"
-    },
-    {
-      "name": "zillow/auto-mobile",
-      "url": "https://github.com/zillow/auto-mobile",
-      "description": "Tool suite built around an MCP server for Android automation for developer workflow and testing",
-      "category": "developer-tools",
-      "tags": [],
-      "stars": 79,
-      "last_updated": "2026-03-10T00:38:11Z",
       "source": "best-of-mcp-servers"
     },
     {
@@ -4034,7 +4034,7 @@
       "category": "cloud-platforms",
       "tags": [],
       "stars": 59,
-      "last_updated": "2026-07-29T12:41:45Z",
+      "last_updated": "2026-07-30T18:04:42Z",
       "source": "best-of-mcp-servers"
     },
     {
