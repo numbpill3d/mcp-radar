@@ -3,6 +3,7 @@
 import json
 import os
 import sys
+import time
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 from urllib.parse import urlparse
@@ -65,6 +66,7 @@ def gh_repo_meta(github_id: str, cache_ttl_hours: int = 24) -> Dict[str, Any]:
     cached = cache.get(github_id)
     if cached and (now - cached.get("_fetched_at", 0)) < cache_ttl_hours * 3600:
         return cached.get("data", {})
+    stale_data = cached.get("data", {}) if cached else {}
 
     url = f"https://api.github.com/repos/{github_id}"
     max_retries = 3
@@ -80,14 +82,13 @@ def gh_repo_meta(github_id: str, cache_ttl_hours: int = 24) -> Dict[str, Any]:
                     f"(attempt {attempt + 1}/{max_retries}): {exc}",
                     file=sys.stderr,
                 )
-                import time
                 time.sleep(wait)
                 continue
             print(
                 f"gave up on {github_id} after {max_retries} network failures: {exc}",
                 file=sys.stderr,
             )
-            return {}
+            return stale_data
 
         rate_limited_403 = r.status_code == 403 and (
             r.headers.get("x-ratelimit-remaining") == "0"
@@ -102,7 +103,6 @@ def gh_repo_meta(github_id: str, cache_ttl_hours: int = 24) -> Dict[str, Any]:
                     f"{wait}s (attempt {attempt + 1}/{max_retries})",
                     file=sys.stderr,
                 )
-                import time
                 time.sleep(wait)
                 continue
             print(
@@ -110,7 +110,7 @@ def gh_repo_meta(github_id: str, cache_ttl_hours: int = 24) -> Dict[str, Any]:
                 f"{r.status_code}",
                 file=sys.stderr,
             )
-            return {}
+            return stale_data
 
         # Only definitive absence is safe to cache. Authentication, permission,
         # abuse-detection, and other 4xx failures may be transient.
@@ -123,15 +123,15 @@ def gh_repo_meta(github_id: str, cache_ttl_hours: int = 24) -> Dict[str, Any]:
                 f"github returned non-cacheable status {r.status_code} for {github_id}",
                 file=sys.stderr,
             )
-            return {}
+            return stale_data
 
         try:
             data = r.json()
             cache[github_id] = {"_fetched_at": now, "data": data}
             _save_cache(cache)
             return data
-        except (requests.JSONDecodeError, ValueError):
-            return {}
+        except ValueError:
+            return stale_data
 
     return {}
 

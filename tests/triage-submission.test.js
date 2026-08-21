@@ -7,6 +7,7 @@ const {
   closeOpenSubmissionPulls,
   findPendingDuplicate,
   isSubmissionIssue,
+  submissionFingerprint,
   validateSubmission,
   statusMarker,
 } = require("../.github/scripts/triage-submission.js");
@@ -42,6 +43,15 @@ Affiliated with the official server.
 
 test("recognizes a complete submission even when GitHub omitted the label", () => {
   const issue = { title: "[Server] Agent QA", body: completeBody, labels: [] };
+  assert.equal(isSubmissionIssue(issue), true);
+});
+
+test("recognizes a labeled submission even when its body is incomplete", () => {
+  const issue = {
+    title: "Any title",
+    body: "Minimal body",
+    labels: ["server-submission"],
+  };
   assert.equal(isSubmissionIssue(issue), true);
 });
 
@@ -87,6 +97,28 @@ test("validates required fields, categories, tags, and confirmation", () => {
       "At least one tag is required.",
       "The public MCP server confirmation checkbox must be checked.",
     ],
+  );
+});
+
+test("fingerprint changes with the base list but ignores refreshed live metadata", () => {
+  const entry = {
+    name: "Agent QA",
+    url: "https://github.com/vostride/agent-qa",
+    description: "QA server",
+    category: "developer-tools",
+    tags: ["testing"],
+    stars: 10,
+    last_updated: "old",
+    source: "supplemental",
+  };
+  const base = [{ name: "Existing", url: "https://github.com/a/b" }];
+  assert.equal(
+    submissionFingerprint(entry, base),
+    submissionFingerprint({ ...entry, stars: 11, last_updated: "new" }, base),
+  );
+  assert.notEqual(
+    submissionFingerprint(entry, base),
+    submissionFingerprint(entry, [...base, { name: "New", url: "https://github.com/c/d" }]),
   );
 });
 

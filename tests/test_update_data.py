@@ -60,7 +60,7 @@ class GitHubRepoMetadataTests(unittest.TestCase):
 
         self.assertEqual(result, {"stargazers_count": 7})
         self.assertEqual(mock_get.call_count, 2)
-        sleep.assert_called_once()
+        sleep.assert_called_once_with(1)
         save_cache.assert_called_once()
 
     @patch("scripts.update_data._save_cache")
@@ -70,6 +70,59 @@ class GitHubRepoMetadataTests(unittest.TestCase):
         self, mock_get, _load_cache, save_cache
     ):
         mock_get.return_value = Mock(status_code=403, headers={})
+
+        result = update_data.gh_repo_meta("owner/repo")
+
+        self.assertEqual(result, {})
+        save_cache.assert_not_called()
+
+    @patch("time.sleep")
+    @patch("scripts.update_data._save_cache")
+    @patch(
+        "scripts.update_data._load_cache",
+        return_value={
+            "owner/repo": {
+                "_fetched_at": 0,
+                "data": {"stargazers_count": 99, "pushed_at": "stale"},
+            }
+        },
+    )
+    @patch("scripts.update_data.requests.get")
+    def test_preserves_stale_metadata_after_exhausted_network_retries(
+        self, mock_get, _load_cache, save_cache, sleep
+    ):
+        mock_get.side_effect = update_data.requests.Timeout("offline")
+
+        result = update_data.gh_repo_meta("owner/repo")
+
+        self.assertEqual(
+            result, {"stargazers_count": 99, "pushed_at": "stale"}
+        )
+        save_cache.assert_not_called()
+
+    @patch("scripts.update_data._save_cache")
+    @patch("scripts.update_data._load_cache", return_value={})
+    @patch("scripts.update_data.requests.get")
+    def test_caches_definitive_not_found_response(
+        self, mock_get, _load_cache, save_cache
+    ):
+        mock_get.return_value = Mock(status_code=404, headers={})
+
+        result = update_data.gh_repo_meta("owner/repo")
+
+        self.assertEqual(result, {})
+        saved = save_cache.call_args.args[0]["owner/repo"]
+        self.assertEqual(saved["data"], {})
+
+    @patch("scripts.update_data._save_cache")
+    @patch("scripts.update_data._load_cache", return_value={})
+    @patch("scripts.update_data.requests.get")
+    def test_malformed_json_does_not_poison_cache(
+        self, mock_get, _load_cache, save_cache
+    ):
+        response = Mock(status_code=200, headers={})
+        response.json.side_effect = ValueError("invalid json")
+        mock_get.return_value = response
 
         result = update_data.gh_repo_meta("owner/repo")
 

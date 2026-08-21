@@ -34,6 +34,8 @@ jobs:
          contains(github.event.issue.body, '### GitHub repository URL'))))
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: parse, validate, and open or update PR
         uses: actions/github-script@v7
@@ -49,14 +51,25 @@ jobs:
             const issues = await github.paginate(github.rest.issues.listForRepo, {
               ...context.repo,
               state: 'open',
-              labels: 'server-submission',
+              sort: 'created',
+              direction: 'desc',
               per_page: 100,
             });
             const repository = await github.rest.repos.get(context.repo);
+            const failures = [];
             for (const issue of issues.filter(item => !item.pull_request)) {
               const issueContext = {
                 ...context,
+                repo: context.repo,
                 payload: { issue, repository: repository.data },
               };
-              await run({ github, context: issueContext, core });
+              try {
+                await run({ github, context: issueContext, core });
+              } catch (error) {
+                failures.push(`#${issue.number}: ${error.message}`);
+                core.warning(`triage failed for #${issue.number}: ${error.message}`);
+              }
+            }
+            if (failures.length) {
+              core.setFailed(`triage sweep failures:\n${failures.join('\n')}`);
             }

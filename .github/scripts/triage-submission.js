@@ -1,5 +1,7 @@
 "use strict";
 
+const crypto = require("node:crypto");
+
 const CATEGORIES = [
   "finance",
   "ecommerce",
@@ -85,14 +87,20 @@ function canonicalGitHubRepo(rawUrl) {
 function validateSubmission(submission) {
   const errors = [];
   if (!submission.name) errors.push("Server name is required.");
+  else if (submission.name.length > 100) errors.push("Server name must be 100 characters or fewer.");
   if (!submission.repoUrl) errors.push("GitHub repository URL is required.");
   if (!submission.description) errors.push("Description is required.");
+  else if (submission.description.length > 2000) errors.push("Description must be 2,000 characters or fewer.");
   if (!submission.category) {
     errors.push("Category is required.");
   } else if (!CATEGORIES.includes(submission.category)) {
     errors.push(`Category must be one of: ${CATEGORIES.join(", ")}.`);
   }
   if (!submission.tags.length) errors.push("At least one tag is required.");
+  else if (submission.tags.length > 20) errors.push("No more than 20 tags are allowed.");
+  else if (submission.tags.some((tag) => tag.length > 50)) {
+    errors.push("Each tag must be 50 characters or fewer.");
+  }
   if (!submission.confirmed) {
     errors.push("The public MCP server confirmation checkbox must be checked.");
   }
@@ -112,17 +120,43 @@ function normalizeUrl(url) {
   return String(url || "").trim().replace(/\/+$/, "").toLowerCase();
 }
 
+function oneLine(value, maxLength = 100) {
+  return String(value || "").replace(/[\r\n\t]+/g, " ").trim().slice(0, maxLength);
+}
+
+function submissionFingerprint(entry, baseSupplemental) {
+  const submittedFields = {
+    name: entry.name,
+    url: entry.url,
+    description: entry.description,
+    category: entry.category,
+    tags: entry.tags,
+  };
+  const desiredState = {
+    baseSupplemental,
+    submittedFields,
+  };
+  return crypto
+    .createHash("sha256")
+    .update(JSON.stringify(desiredState))
+    .digest("hex");
+}
+
 async function ensureLabel(github, repo, name, color, description) {
   try {
     await github.rest.issues.getLabel({ ...repo, name });
   } catch (error) {
     if (error.status !== 404) throw error;
-    await github.rest.issues.createLabel({
-      ...repo,
-      name,
-      color,
-      description,
-    });
+    try {
+      await github.rest.issues.createLabel({
+        ...repo,
+        name,
+        color,
+        description,
+      });
+    } catch (createError) {
+      if (createError.status !== 422) throw createError;
+    }
   }
 }
 
@@ -221,6 +255,7 @@ async function findPendingDuplicate(
       repo,
       "data/supplemental_servers.json",
       pull.head.sha,
+      [],
     );
     if (!Array.isArray(proposed.value)) {
       throw new Error(
@@ -292,6 +327,12 @@ async function run({ github, context, core }) {
   }
 
   const submittedRepo = canonicalGitHubRepo(submission.repoUrl);
+  if (!submittedRepo) {
+    await reject([
+      "GitHub repository URL must look like `https://github.com/owner/repo`.",
+    ]);
+    return;
+  }
   let metadata;
   try {
     metadata = (
@@ -374,45 +415,13 @@ async function run({ github, context, core }) {
     source: "supplemental",
   };
   const updatedSupplemental = [...supplemental.value, entry];
-  const baseRef = await github.rest.git.getRef({ ...repo, ref: `heads/${base}` });
-  try {
-    await github.rest.git.createRef({
-      ...repo,
-      ref: `refs/heads/${branch}`,
-      sha: baseRef.data.object.sha,
-    });
-  } catch (error) {
-    if (error.status !== 422) throw error;
-    await github.rest.git.updateRef({
-      ...repo,
-      ref: `heads/${branch}`,
-      sha: baseRef.data.object.sha,
-      force: true,
-    });
-  }
-
-  const branchFile = await readJson(
-    github,
-    repo,
-    "data/supplemental_servers.json",
-    branch,
-    [],
-  );
-  await github.rest.repos.createOrUpdateFileContents({
-    ...repo,
-    path: "data/supplemental_servers.json",
-    branch,
-    content: Buffer.from(
-      `${JSON.stringify(updatedSupplemental, null, 2)}\n`,
-    ).toString("base64"),
-    message: `submission: add ${submission.name} (issue #${issueNumber})`,
-    ...(branchFile.sha ? { sha: branchFile.sha } : {}),
-  });
-
-  const title = `Add ${submission.name} (submission #${issueNumber})`;
+  const safeName = oneLine(submission.name);
+  const fingerprint = submissionFingerprint(entry, supplemental.value);
+  const fingerprintMarker = `<!-- mcp-radar-entry-sha256:${fingerprint} -->`;
+  const title = `Add ${safeName} (submission #${issueNumber})`;
   const prBody =
-    `Automated submission from #${issueNumber} by @${issue.user.login}.\n\n` +
-    `\`\`\`json\n${JSON.stringify(entry, null, 2)}\n\`\`\`\n\n` +
+    `${fingerprintMarker}\nAutomated submission from #${issueNumber} by @${issue.user.login}.\n\n` +
+    `Validated repository: ${canonical.url}\n\n` +
     `Review and merge to publish.\n\nCloses #${issueNumber}`;
   const openPulls = await github.rest.pulls.list({
     ...repo,
@@ -420,9 +429,50 @@ async function run({ github, context, core }) {
     head: `${repo.owner}:${branch}`,
     base,
   });
+  const existingPull = openPulls.data[0] || null;
+  const branchAlreadyCurrent =
+    existingPull && String(existingPull.body || "").includes(fingerprintMarker);
+
+  if (!branchAlreadyCurrent) {
+    const baseRef = await github.rest.git.getRef({ ...repo, ref: `heads/${base}` });
+    try {
+      await github.rest.git.createRef({
+        ...repo,
+        ref: `refs/heads/${branch}`,
+        sha: baseRef.data.object.sha,
+      });
+    } catch (error) {
+      if (error.status !== 422) throw error;
+      await github.rest.git.updateRef({
+        ...repo,
+        ref: `heads/${branch}`,
+        sha: baseRef.data.object.sha,
+        force: true,
+      });
+    }
+
+    const branchFile = await readJson(
+      github,
+      repo,
+      "data/supplemental_servers.json",
+      branch,
+      [],
+    );
+    await github.rest.repos.createOrUpdateFileContents({
+      ...repo,
+      path: "data/supplemental_servers.json",
+      branch,
+      content: Buffer.from(
+        `${JSON.stringify(updatedSupplemental, null, 2)}\n`,
+      ).toString("base64"),
+      message: `submission: add ${safeName} (issue #${issueNumber})`,
+      ...(branchFile.sha ? { sha: branchFile.sha } : {}),
+    });
+  }
+
   let pull;
-  if (openPulls.data.length) {
-    pull = openPulls.data[0];
+  if (existingPull) {
+    pull = existingPull;
     await github.rest.pulls.update({
       ...repo,
       pull_number: pull.number,
@@ -458,5 +508,6 @@ module.exports = {
   parseSubmission,
   run,
   statusMarker,
+  submissionFingerprint,
   validateSubmission,
 };

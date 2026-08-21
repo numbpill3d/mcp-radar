@@ -39,8 +39,8 @@ open `index.html` in a browser.
 anyone can submit an mcp server — no PR skills required.
 
 1. open **Issues → New issue → "Submit a server"** (the issue form).
-2. fill in name, github repo url, description, category, tags.
-3. a github action (`triage server submission`) automatically:
+2. fill in name, GitHub repo URL, description, category, tags.
+3. a GitHub Action (`triage server submission`) automatically:
    - detects issue-form submissions even if GitHub, the CLI, or an API client
      omits the template label, then applies `server-submission` itself
    - validates the repo is a real, public github repo
@@ -52,7 +52,7 @@ anyone can submit an mcp server — no PR skills required.
    - runs an hourly reconciliation sweep so transient event failures and bursts
      of simultaneous submissions do not leave issues unprocessed
 4. a maintainer reviews + merges the PR. merging closes the submission issue and
-   feeds the next daily `update data` run, which regenerates `servers.json`. you
+   feeds the next daily `update data` run, which regenerates `servers.json`. You
    can also run the `update data` workflow manually to publish immediately.
 
 hand-added servers live in `data/supplemental_servers.json` (source:
