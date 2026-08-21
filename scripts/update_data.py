@@ -70,19 +70,59 @@ def gh_repo_meta(github_id: str, cache_ttl_hours: int = 24) -> Dict[str, Any]:
     max_retries = 3
 
     for attempt in range(max_retries):
-        r = requests.get(url, headers=gh_headers(), timeout=60)
+        try:
+            r = requests.get(url, headers=gh_headers(), timeout=60)
+        except requests.RequestException as exc:
+            if attempt + 1 < max_retries:
+                wait = 2 ** (attempt + 2)  # 4, 8 seconds
+                print(
+                    f"github request failed for {github_id} — retrying in {wait}s "
+                    f"(attempt {attempt + 1}/{max_retries}): {exc}",
+                    file=sys.stderr,
+                )
+                import time
+                time.sleep(wait)
+                continue
+            print(
+                f"gave up on {github_id} after {max_retries} network failures: {exc}",
+                file=sys.stderr,
+            )
+            return {}
 
-        if r.status_code == 429:
-            wait = 2 ** (attempt + 2)  # 4, 8, 16 seconds
-            print(f"rate limited — retrying in {wait}s (attempt {attempt + 1}/{max_retries})", file=sys.stderr)
-            import time
-            time.sleep(wait)
-            continue
+        rate_limited_403 = r.status_code == 403 and (
+            r.headers.get("x-ratelimit-remaining") == "0"
+            or bool(r.headers.get("retry-after"))
+        )
+        if r.status_code in (429, 500, 502, 503, 504) or rate_limited_403:
+            if attempt + 1 < max_retries:
+                retry_after = r.headers.get("retry-after")
+                wait = int(retry_after) if retry_after and retry_after.isdigit() else 2 ** (attempt + 2)
+                print(
+                    f"github returned {r.status_code} for {github_id} — retrying in "
+                    f"{wait}s (attempt {attempt + 1}/{max_retries})",
+                    file=sys.stderr,
+                )
+                import time
+                time.sleep(wait)
+                continue
+            print(
+                f"gave up on {github_id} after {max_retries} responses with status "
+                f"{r.status_code}",
+                file=sys.stderr,
+            )
+            return {}
 
-        # handle renamed/deleted repos gracefully
-        if r.status_code >= 400:
+        # Only definitive absence is safe to cache. Authentication, permission,
+        # abuse-detection, and other 4xx failures may be transient.
+        if r.status_code in (404, 410):
             cache[github_id] = {"_fetched_at": now, "data": {}}
             _save_cache(cache)
+            return {}
+        if r.status_code >= 400:
+            print(
+                f"github returned non-cacheable status {r.status_code} for {github_id}",
+                file=sys.stderr,
+            )
             return {}
 
         try:
@@ -90,10 +130,9 @@ def gh_repo_meta(github_id: str, cache_ttl_hours: int = 24) -> Dict[str, Any]:
             cache[github_id] = {"_fetched_at": now, "data": data}
             _save_cache(cache)
             return data
-        except Exception:
+        except (requests.JSONDecodeError, ValueError):
             return {}
 
-    print(f"gave up on {github_id} after {max_retries} retries due to rate limiting", file=sys.stderr)
     return {}
 
 
