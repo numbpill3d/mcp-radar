@@ -128,7 +128,6 @@ async function main() {
   const servers = Array.isArray(serversPayload) ? serversPayload : (serversPayload.servers || []);
   const generatedAt = serversPayload.generated_at || null;
 
-  renderSponsors(sponsors);
   buildCategoryOptions(servers);
 
   const rerender = () => renderServers(servers);
