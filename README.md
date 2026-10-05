@@ -2,6 +2,12 @@
 
 a small github pages site that publishes an auto-updating `servers.json`.
 
+browse the live directory at https://numbpill3d.github.io/mcp-radar/.
+
+![mcp radar directory showing search, filters, server count, and live entries](docs/images/mcp-radar-directory.png)
+
+_the screenshot is a real local capture of the same static site and current directory data._
+
 - site: github pages (static)
 - data: regenerated daily by github actions
 
