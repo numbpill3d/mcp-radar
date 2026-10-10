@@ -9,6 +9,7 @@ test('the page keeps the dynamic results mount point and prerender markers', () 
   assert.match(index, /id="results"/);
   assert.match(index, /<!-- prerender:start -->/);
   assert.match(index, /<!-- prerender:end -->/);
+  assert.match(index, /<label class="field">\s*<span>sort<\/span>\s*<select id="sort">/);
 });
 
 function makeElement(id = '') {
