@@ -1,7 +1,24 @@
+import json
+import re
 import unittest
 from unittest.mock import Mock, patch
 
 from scripts import update_data
+
+
+class StructuredDataTests(unittest.TestCase):
+    def test_index_json_ld_is_valid_json(self):
+        with open(update_data.INDEX_PATH, encoding="utf-8") as index_file:
+            index_html = index_file.read()
+
+        match = re.search(
+            r'<script type="application/ld\+json">(.*?)</script>',
+            index_html,
+            re.DOTALL,
+        )
+
+        self.assertIsNotNone(match)
+        json.loads(match.group(1))
 
 
 class GitHubRepoMetadataTests(unittest.TestCase):
